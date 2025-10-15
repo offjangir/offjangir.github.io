@@ -1,431 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Metadata of the Webpage -->
-    <!-- Character-set Metadata -->
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Viewport Metadata -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Description Metadata-->
-    <meta name="description" content="Portfolio Website" />
-    <!-- Author Metadata -->
-    <meta name="author" content="Yash Jangir" />
-    <!-- Keyword Metadata -->
-    <meta
-      name="keywords"
-      content="Yash Jangir, Yash Jangir BITS, Yash Jangir SVM, Yash Jangir Jaipur,
-      Yash Jangir Website, Yash J"
-    />
-    <!-- Webpage Logo -->
-    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
-    <!-- Webpage Title -->
     <title>Yash Jangir</title>
-
-    <!-- Import CSS: Main Stylesheet -->
-    <link rel="stylesheet" href="./assets/css/main.css" />
+    <meta name="description" content="Research profile of Yash Jangir" />
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+    <style>
+      :root { --bg:#ffffff; --text:#0e0e10; --muted:#5b6472; --link:#0ea5e9; --border:#e5e7eb; --shadow:rgba(2,6,23,0.06); --accent:#111827; }
+      [data-theme="dark"] { --bg:#0a0c10; --text:#f3f4f6; --muted:#a3aab7; --link:#38bdf8; --border:#1f2937; --shadow:rgba(0,0,0,0.3); --accent:#cbd5e1; }
+      html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; line-height:1.75; font-size:20px; }
+      a { color:var(--link); text-decoration:none; }
+      a:hover { text-decoration:underline; }
+      .container { max-width:1100px; margin:0 auto; padding:60px 40px 100px; }
+      header { text-align:center; margin-top:40px; margin-bottom:60px; min-height:280px; }
+      .avatar { width:160px; height:160px; border-radius:999px; object-fit:cover; border:2px solid var(--border); box-shadow:0 8px 24px var(--shadow); display:block; margin:0 auto 30px; }
+      .intro-text { font-size:32px; font-weight:500; letter-spacing:-0.01em; margin:0 0 20px; min-height:140px; line-height:1.6; color:var(--muted); }
+      .intro-line { display:block; opacity:0; }
+      .intro-line.typing { opacity:1; overflow:hidden; border-right:2px solid var(--text); white-space:nowrap; animation: typing-intro steps(var(--chars)) var(--duration) forwards, caret .75s steps(1) infinite; }
+      .intro-line.done { opacity:1; border-right:none; animation:none; }
+      .intro-highlight { background:linear-gradient(135deg, var(--link), #8b5cf6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; font-size:36px; }
+      @keyframes typing-intro { from { width:0; } to { width:100%; } }
+      @keyframes caret { 50% { border-right-color: transparent; } }
+      .name { font-size:48px; font-weight:800; letter-spacing:-0.02em; margin:16px 0 0; background:linear-gradient(135deg, var(--link), #8b5cf6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+      .subtitle { color:var(--muted); margin:12px 0 24px; font-size:24px; font-weight:500; }
+      .actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:10px; }
+      .btn { border:1px solid var(--border); background:transparent; color:var(--text); padding:12px 20px; border-radius:10px; cursor:pointer; box-shadow:0 1px 2px var(--shadow); transition:transform .2s ease, background .2s ease, box-shadow .2s ease; font-size:17px; }
+      .btn:hover { background:rgba(148,163,184,0.08); transform:translateY(-1px); box-shadow:0 6px 14px var(--shadow); }
+      .btn-theme { display:inline-flex; align-items:center; gap:6px; }
+      section { margin-top:56px; }
+      section p { margin-bottom: 20px; line-height: 1.8; font-size: 20px; }
+      section p:last-child { margin-bottom: 0; }
+      h2 { font-size:34px; margin:0 0 28px; font-weight:700; color:var(--accent); letter-spacing:-0.01em; }
+      .pub-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:28px; }
+      .pub { display:flex; gap:20px; align-items:flex-start; opacity:0; transform:translateY(8px); transition:opacity .6s ease, transform .6s ease; }
+      .pub.visible { opacity:1; transform:translateY(0); }
+      .thumb { width:150px; height:100px; object-fit:cover; border:1px solid var(--border); border-radius:8px; background:rgba(148,163,184,0.15); box-shadow:0 2px 8px var(--shadow); flex-shrink:0; }
+      .pub .meta { flex:1; }
+      .title { font-weight:600; font-size:19px; line-height:1.4; margin-bottom:6px; }
+      .authors { font-size:18px; line-height:1.5; margin-bottom:4px; }
+      .venue { color:var(--muted); font-size:17px; line-height:1.5; margin-bottom:8px; }
+      footer { text-align:center; color:var(--muted); margin-top:44px; font-size:16px; }
+      .fade-in { opacity:0; transform:translateY(8px); animation:fade .7s ease forwards; }
+      .fade-in.delay-1 { animation-delay:.15s; }
+      .fade-in.delay-2 { animation-delay:.3s; }
+      @keyframes fade { to { opacity:1; transform:translateY(0); } }
+      @media (prefers-reduced-motion: reduce) {
+        .btn { transition:none; }
+        .pub, .fade-in, .intro-line.typing { animation:none; opacity:1; transform:none; border-right-color: transparent; }
+      }
+      @media (max-width:640px) { .pub { flex-direction:column; } .thumb { width:100%; height:160px; } .name{ font-size:32px; } .subtitle{ font-size:16px; } .intro-text{ font-size:22px; } }
+    </style>
   </head>
-
   <body>
-    <div id="particles-js">
-      <div class="header">
-        <h1>
-          <span class="site-title">Yash Jangir</span>
-          <span class="site-description">Pre Final Year Undergraduate Student at BITS Pilani, Goa Campus</span>
-        </h1>
-        <div class="header-icons">
-          <a aria-label="My LinkedIn Profile" target="_blank" href="https://www.linkedin.com/in/yash-jangir-6a71651a1/">
-            <i class="icon fa fa-linkedin" aria-hidden="true"></i>
-          </a>
-          <a aria-label="My Github Profile" target="_blank" href="https://github.com/offjangir">
-            <i class="icon fa fa-github-alt" aria-hidden="true"></i>
-          </a>
-          <a aria-label="My Résumé" target="_blank" href="https://drive.google.com/file/d/1OsYLAAdPBBkUk1rKiD7ikJbsZeA-AJhO/view?usp=sharing">
-            <i class="icon fa fa fa-file-pdf-o" aria-hidden="true"></i>
-          </a>
-          <a aria-label="Send Email" href="mailto:f20190526@goa.bits-pilani.ac.in" target="_blank"
-            ><i class="icon fa fa-envelope"></i
-          ></a>
+    <div class="container">
+      <header class="fade-in">
+        <img class="avatar" src="./assets/img/jpg/myimage.png" alt="Profile" />
+        <div class="intro-text">
+          <span class="intro-line" id="intro-1">
+            Hi! I'm <span class="intro-highlight" data-name-en="Yash Jangir" data-name-hi="यश जांगिड़">Yash Jangir</span>
+          </span>
+          <span class="intro-line" id="intro-2" data-text="If you're here, you probably want to know a bit more about me."></span>
+          <span class="intro-line" id="intro-3" data-text="So here's the tea ☕:"></span>
         </div>
-        <div class="header-links">
-          <a class="link" href="#about" data-scroll>About Me</a>
-          <a class="link" href="#projects" data-scroll>Projects</a>
-        </div>
-      </div>
-      <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
-    </div>
-
-    <!-- About Section -->
-    <section id="about">
-      <!-- User Introduction-->
-      <div class="user-details">
-        <h1>About Me</h1>
-        <picture>
-          <source
-            type="image/webp"
-            srcset="./assets/img/webp/Professional-Picture-Me.webp"
-            alt="Professional Me"
-            width="20%"
-            style="border-radius: 50%"
-          />
-          <img
-            src="./assets/img/jpg/Professional-Picture-Me.jpg"
-            alt="Professional Me"
-            width="20%"
-            style="border-radius: 50%"
-          />
-        </picture>
-        <p >
-          I am a Pre Final Year Undergradute student at Birla Institute of Technology and Science, Pilani K.K Birla Goa Campus.
-          I am majoring in Electronics and Instrumentation Engineering, with intent to minor in Robotics and Artificial Intelligence.
-          My primary area of research lies in the field of robotics particularly Controls, Navigation, and Perception. I have a good
-          hold of programming in Python, C, C++ with OOP. Apart from programming, I have a good hold of simulation software and multiple 
-          frameworks for robotics such as ROS, Gazebo, Matlab, Simulink, etc. I also have a good amount of experience in hardware
-          implementation, especially Embedded Systems and IoT. I have worked on multiple research projects at Government Labs, Educational
-          Institutions, Industrial Companies, and Competetive Teams. This has helped me to apply my knowledge in multiple scenarios and 
-          for multiple purposes.
-        </p>
+        <div class="subtitle" style="opacity:0;">Graduate Student • Carnegie Mellon University</div>
+      </header>
+      <section id="about" class="fade-in delay-2">
         <p>
-          During my research internships and project work, I submitted multiple papers. My paper on "A Generalized Kalman Filter Augmented 
-          Deep-Learning based Approach for Autonomous Landing in MAVs was accepted in IRIA'21. Currently, my article on "A comparative study 
-          of Classical and Optimal controller for 3-DOF robotic manipulators is in review for publication in Elsevier journals.
+          I'm a 2nd Year M.Sc Robotics Student at <strong>Carnegie Mellon University</strong>, advised by 
+          <a href="https://www.cs.cmu.edu/~katef/" target="_blank" rel="noopener">Prof. Katerina Fragkiadaki</a> and <a href="https://yonatanbisk.com/" target="_blank" rel="noopener">Prof. Yonatan Bisk</a> . 
+          I work on how robots can learn to act intelligently in diverse, real-world settings. 
+          My current research focuses on <strong>real-to-sim alignment</strong>, 
+          <strong>vision–language–action (VLA) models</strong>, and 
+          <strong>evaluating generalist robot policies</strong>. 
+          I'm also interested in exploring how  <strong>world dynamics </strong> and <strong>video-to-3D representations</strong> can help robots better understand and interact with the environments.
         </p>
-      </div>
       
+        <p>
+          Before grad school, I was a <a href="https://riss.ri.cmu.edu/" target="_blank" rel="noopener">Robotics Institute Summer Scholar (RISS)</a> at CMU, 
+          where I worked with <a href="https://www.ri.cmu.edu/ri-faculty/sebastian-scherer/" target="_blank" rel="noopener">Prof. Sebastian Scherer</a> and 
+          <a href="https://aerogjy.github.io/" target="_blank" rel="noopener">Prof. Junyi Geng</a> 
+          on aerial manipulation and visual control. I also worked as a <strong>Robot Software Engineer</strong> at 
+          <a href="https://www.clutterbot.com/#About" target="_blank" rel="noopener">Clutterbot Robotics</a>, 
+          developing efficient global relocalization methods for robots operating in unstructured environments with sparse maps. 
+          I completed my undergraduate studies at <strong>BITS Pilani, Goa</strong>.
+        </p>
+      
+        <p>
+          I am always open to new ideas, collaborations or discussions (whatever it may be). Feel free to reach out! You can find my contact info, CV, and projects here, or visit my 
+          <a href="https://github.com/offjangir" target="_blank" rel="noopener">GitHub</a>.
+        </p>
+        <div class="actions fade-in delay-1" style="opacity:0;">
+          <a class="btn" href="mailto:offjangir@gmail.com">Contact</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=ZzyKpUcAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="btn" href="https://www.linkedin.com/in/yash-jangir-6a71651a1/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/offjangir" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://drive.google.com/file/d/1OsYLAAdPBBkUk1rKiD7ikJbsZeA-AJhO/view?usp=sharing" target="_blank" rel="noopener">CV</a>
+          <button class="btn" id="toggle-lang">नाम/Name</button>
+          <button class="btn btn-theme" id="toggle-theme"><span id="theme-icon">☀️</span> Theme</button>
+        </div>
       </section>
 
-      <section id="about">
-        <!-- User Introduction-->
-        <div class="user-details">
-          <h1>Publications</h1>
-          <p>
-            [1] P.Mathur, Y.Jangir, and N.Goveas A generalized kalman filter augmented deep-learning based approach for autonomous landing in MAVs.
-            (<a href="https://arxiv.org/abs/2109.15114">Link</a>) IRIA’21, at IRIA'21 Accepted. Recieved
-           <a href="https://drive.google.com/file/d/1W-D0mbU25e9ZUftPrwGq6dg4gEXcNUXl/view?usp=sharing"> Best Paper Award</a>          </p>
+      
+
+      <section id="publications">
+        <h2>Selected Projects and Publications</h2>
+        <ul class="pub-list" id="pub-list">
+          <li class="pub">
+            <img class="thumb" alt="RobotArena" src="./assets/img/jpg/robotarena.png" />
+            <div class="meta">
+              <div class="title">RobotArena ∞: Unlimited Robot Benchmarking via Real-to-Sim Translation</div>
+              <!-- <div class="authors"><strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong></div> -->
+              <div class="venue">Paper coming soon!</div>
+              <!-- <div><strong>In Progress</strong></div> -->
+            </div>
+          </li>
+          <li class="pub">
+            <img class="thumb" alt="ImagineAct" src="./assets/img/jpg/imagineAct.png" />
+            <div class="meta">
+              <div class="title">ImagineAct: Improving VLAs through World Dynamics modelling</div>
+              <div class="authors"><strong><span class="a-name" data-en=" Yash Jangir, Karan Mirakhor, Tanya Choudhary" data-hi="यश जांगिड़">Yash Jangir, Karan Mirakhor, Tanya Choudhary</span></strong></div>
+              <div class="venue">Coming soon!</div>
+              <!-- <div><strong>In Progress</strong></div> -->
+            </div>
+          </li>
+          <li class="pub">
+            <img class="thumb" alt="ReMov3r" src="./assets/img/jpg/remov3r.png" />
+            <div class="meta">
+              <div class="title">ReMov3r: Real-Time Monocular Video to 3D Reconstruction</div>
+              <div class="authors"><strong><span class="a-name" data-en="Yash Jangir, Karan Mirakhor, Tanya Choudharyr" data-hi="यश जांगिड़">Yash Jangir, Karan Mirakhor, Tanya Choudhary</span></strong></div>
+              <!-- <div class="venue">Project Report</div> -->
+              <div><a href="./assets/img/jpg/L3D_Project_Proposal.pdf" target="_blank" rel="noopener"><strong>Report</strong></a></div>
         </div>
+          </li>
+          <li class="pub">
+            <img class="thumb" alt="IROS 2023" src="./assets/img/jpg/servo_paper.png" />
+            <div class="meta">
+              <div class="title">Image-based visual servo control for aerial manipulation using a fully‑actuated UAV</div>
+              <div class="authors"><strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span><sup>*</sup></strong>, Guanqi He<sup>*</sup>, Junyi Geng, Mohammadreza Mousaei, Dongwei Bai, Sebastian Scherer</div>
+              <div class="venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2023</div>
+              <div><a href="https://ieeexplore.ieee.org/document/10342145" target="_blank" rel="noopener"><strong>Paper</strong></a></div>
+        </div>
+          </li>
+          <li class="pub">
+            <img class="thumb" alt="IRIA 2021" src="./assets/img/jpg/autoland.png" />
+            <div class="meta">
+              <div class="title">A generalized Kalman filter augmented deep‑learning approach for autonomous landing in MAVs</div>
+              <div class="authors">Pranay Mathur, <strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong>, Neena Goveas</div>
+              <div class="venue">Int. Symposium of Asian Control Association on Intelligent Robotics and Industrial Automation (IRIA), 2021 — Best Paper Award</div>
+              <div><a href="https://ieeexplore.ieee.org/document/9588758" target="_blank" rel="noopener"><strong>Paper</strong></a></div>
+      </div>
+          </li>
+          <li class="pub">
+            <img class="thumb" alt="ICMA 2022" src="./assets/img/jpg/manipulation.png" />
+            <div class="meta">
+              <div class="title">Implementation and testing of force control on a spherical articulated manipulator</div>
+              <div class="authors">Prathamesh Saraf, <strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong>, R. N. Ponnalagu</div>
+              <div class="venue">IEEE International Conference on Mechatronics and Automation (ICMA), 2022 — Finalist Best Paper Award</div>
+              <div><a href="https://ieeexplore.ieee.org/document/9856174" target="_blank" rel="noopener"><strong>Paper</strong></a></div>
+        </div>
+          </li>
+          <li class="pub">
+            <img class="thumb" alt="ASCC 2022" src="./assets/img/jpg/purepusuit.png" />
+            <div class="meta">
+              <div class="title">3D pure pursuit guidance of drones for autonomous precision landing</div>
+              <div class="authors">Kaushal Kishore, Sagar Dalai, <strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong>, Samarth Singh, M Rohan, D Shashank, Sree S S Katta, S K Saha</div>
+              <div class="venue">13th Asian Control Conference (ASCC), 2022</div>
+              <div><a href="https://ieeexplore.ieee.org/document/9828198" target="_blank" rel="noopener"><strong>Paper</strong></a></div>
+        <!-- </div> -->
+          <!-- </li>
+          <li class="pub">
+            <img class="thumb" alt="ELVIS" src="./assets/img/jpg/elvis.png" />
+            <div class="meta">
+              <div class="title">ELVIS: Efficient line detections and tracking for visual servoing</div>
+              <div class="authors"><strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong>, Junyi Geng, Sebastian Scherer</div>
+              <div class="venue">RISS Working Papers Journal, 2022</div>
+              <div><a href="https://drive.google.com/file/d/1Idqf3vfNLuw2NfbLQ2e-gu1rd8VHj8XD/view" target="_blank" rel="noopener"><strong>Poster</strong></a> · <a href="https://www.youtube.com/watch?v=9Ki90lQnqnQ" target="_blank" rel="noopener"><strong>Video</strong></a></div> -->
+      </div>
+          </li>
+         </ul>
+    </section>
+
+      <footer>
+        © Yash Jangir, 2025
+      </footer>
+      </div>
+
+    <script>
+      // Typewriter intro animation
+      (function(){
+        var intro1 = document.getElementById('intro-1');
+        var intro2 = document.getElementById('intro-2');
+        var intro3 = document.getElementById('intro-3');
+        var nameSpan = intro1.querySelector('.intro-highlight');
+        var subtitle = document.querySelector('.subtitle');
+        var actions = document.querySelector('.actions');
         
-        </section>
-    <section id="about">
-        <div class="user-details">
-          <h1>Experience</h1>
-        </div>
-      <div class="user">
-        <div class="tech">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="./assets/img/webp/BITS.webp"
-              alt="BITS GOA"
-              width="130px"
-              style="border-radius: 50%"
-            />
-            <img
-              src="./assets/img/jpg/BITS.jpg"
-              alt="BITS GOA"
-              width="100px"
-              style="border-radius: 50%"
-              class="img-tech"
-            />
-          </picture>
-          <p>Research Intern</p>
-          <p>BITS, Pilani K.K Birla Goa Campus</p>
-        </div>
-
-        <div class="tech">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="./assets/img/webp/CEERI.webp"
-              alt="BITS GOA"
-              width="130px"
-              style="border-radius: 50%"
-            />
-            <img
-              src="./assets/img/jpg/CEERI.jpg"
-              alt="CEERI"
-              width="130px"
-              style="border-radius: 50%"
-              class="img-tech"
-            />
-          </picture>
-          <p> Summer Research Intern</p>
-          <p> CSIR-Central Electronics Engineering Research Institute(CEERI)</p>
-        </div>
-
-        <div class="tech">
+        var lang = localStorage.getItem('lang') || 'en';
+        var nameText = nameSpan.getAttribute(lang === 'en' ? 'data-name-en' : 'data-name-hi');
+        var fullText = "Hi! I'm " + nameText;
+        
+        // Step 1: Type "Hi! I'm Yash Jangir"
+        setTimeout(function(){
+          intro1.innerHTML = "Hi! I'm <span class='intro-highlight' data-name-en='Yash Jangir' data-name-hi='यश जांगीर'>" + nameText + "</span>";
+          intro1.style.setProperty('--chars', fullText.length);
+          intro1.style.setProperty('--duration', '1.8s');
+          intro1.classList.add('typing');
           
-          <picture>
-            <source
-              type="image/webp"
-              srcset="./assets/img/webp/MELSS.webp"
-              alt="mel"
-              width="150px"
-              style="border-radius: 90%"
-            />
-            <img
-              src="./assets/img/jpg/MELSS.jpg"
-              alt="mel"
-              width="150px"
-              style="border-radius: 9SS0%"
-              class="img-tech"
-            />
-          </picture>
-          <h4></h4>
-          <p>Summer Intern </p>
-          <p>MEL Systems & Services Ltd. Chennai</p>
-        </div>
-
-        <!-- Technology Stack #4: Tools -->
-      </div>
-    </section>
-
-   
-    <!-- Projects Section -->
-    <section id="projects">
-      <div class="user-details">
-        <h1> Projects</h1>
-      </div>
-
-      <!-- User Project #1: Personal Résumé Website -->
-      <div class="user-projects">
-        <div class="images-right">
-          <picture>
-            <p></p>
-            <h3></h3>
-            <source type="image/webp" srcset="./assets/img/webp/autd.webp" alt="Deep-Learning Based Autonomous Landing For MAVs" />
-            <img alt="Deep-Learning Based Autonomous Landing For MAVs" src="./assets/img/jpg/autd.jpg" />
-          </picture>
-        </div>
-        <div class="contents" style="text-align: left">
-          <h3 style="text-align: center">Deep-Learning Based Autonomous Landing For MAVs</h3>
-          <ul style="color:black ">
-            <li>Developed of Kalman filter-based PID controller for Autonomous MAV landing.</li>
-            <li>Used C++, Python, PX4-Autopilot, ROS, Gazebo Simulator.</li>
-            <li>Paper accepted in IRIA'21</li>
-        <p style="text-align: center">
-          <a class="project-link" target="_blank" href="https://github.com/Matnay/GenKALM"
-            >Check it out!</a>
-        </p>
-        </div>
-      </div>
-
-      <!-- User Project #2: Summer 2020 Project -->
-      <div class="user-projects">
-        <div class="images-left">
-          <p></p>
-          <h3></h3>
-          <picture>
-            <source type="image/webp" srcset="./assets/img/webp/arm.webp" alt="Multi-Controller Stack For 3-DOF Manipulator" />
-            <img alt="Multi-Controller Stack For 3-DOF Manipulator" src="./assets/img/jpg/arm.jpg" />
-          </picture>
-        </div>
-        <div class="contents-right" style="text-align: left">
-          <h3 style="text-align: center">Multi-Controller Stack For 3-DOF Manipulator</h3>
-          <ul style="color:rgb(0, 0, 0);">
-            <li>Working on designing multiple controllers forindustrial 3-DOF Robotic Arms.</li>
-            <li>Used Matlab Simulink, ROS Toolbox for Matlab, Gazebo, ROS(Robot Operating System), Manipulator-(Kuka LBR Iiwa 7)</li>
-            <li>Paper in Review in Elsevier Controls and Systems Letters</li>
-         </ul>
-        <p style="text-align: center">
-          <a class="project-link" target="_blank" href="https://github.com/offjangir/Robotic_arm"
-            >Check it out!</a>
-        </p>
-        </div>
-      </div>
-
-      <!-- User Project #3 -->
-      <div class="user-projects">
-        <div class="images-right">
-          <p></p>
-          <h3></h3>
-          <picture>
-            <source type="image/webp" srcset="./assets/img/webp/vad.webp" alt="Vision Assisted Pure Pursuit based Landing For MAVs" />
-            <img alt="Vision Assisted Pure Pursuit based Landing For MAVs" src="./assets/img/jpg/vad.jpg" />
-          </picture>
-        </div>
-        <div  class="contents" style="text-align: left">
-          <h3 style="text-align: center">Vision Assisted Pure Pursuit based Landing For MAVs</h3>
-          <ul style="color:rgb(0, 0, 0);">
-            <li>Implemented a new approach for Pure Pursuit algorithm for UAVs.</li>
-            <li>Used ROS, Python, C++, Gazebo, Rviz, and PX4 Autopilot.</li>
-            <li>Paper Manuscript in Preparation for Submission</li>
-         </ul>
-        <p style="text-align: center">
-          <a class="project-link" target="_blank" href="https://github.com/offjangir/Drone_Landing_PP"
-          >Check it out!</a>
-        </p>
-        </div>
-      </div>
-
-      <!-- Use Project #4:  -->
-      <div class="user-projects">
-        <div class="images-left">
-          <picture>
-            <source type="image/webp" srcset="./assets/img/webp/kratos.webp" alt="Project Kratos - A Mars Rover" />
-            <img alt="Project Kratos - A Mars Rover" src="./assets/img/jpg/kratos.jpg" />
-          </picture>
-        </div>
-        <div class="contents-right" style="text-align: left">
-          <h3 style="text-align: center">Project Kratos - A Mars Rover</h3>
-          <ul style="color:rgb(0, 0, 0);">
-            <li>Working on development of prototype of a mars roverforthe University Rover
-              Challenge (URC). </li>
-            <li>Implemented PID control using ROS, C++, Python, Arduino,
-              etc. Project funded by Sandbox Fabrication Laboratory, BITS Goa</li>
-         </ul>
-        <p style="text-align: center">
-          <a class="project-link" target="_blank" href="https://github.com/Kratos-The-Rover"
-            >Check it out!</a>
-        </p>
-        </div>
-      </div>
-
-      <div class="user-projects">
-        <div class="images-right">
-          <picture>
-            <source type="image/webp" srcset="./assets/img/webp/Chess.webp" alt="Chess Piece Automation" />
-            <img alt="Chess Piece Automation" src="./assets/img/jpg/Chess.jpg" />
-          </picture>
-        </div>
-        <div  class="contents" style="text-align: left">
-          <h3 style="text-align: center">Chess Piece Automation</h3>
-          <ul style="color:rgb(0, 0, 0);">
-            <li>Designed to fulfill the course requirements of the digital design course.</li>
-            <li>A digital sequential synchronous circuit designed using flipflops, registers counters, and basic digital logic</li>
-            <li>The circuit was successfully simulated on Logisim.</li>
-         </ul>
-        <p style="text-align: center">
-          <a class="project-link" target="_blank" href="https://github.com/offjangir/ChessPieceAutomator"
-          >Check it out!</a>
-        </p>
-        </div>
-      </div>
-
-      <div class="user-projects">
-        <div class="images-left">
-          <picture>
-            <source type="image/webp" srcset="./assets/img/webp/tank.webp" alt="Smart Overhead Tank" />
-            <img alt="Smart Overhead Tank" src="./assets/img/jpg/tank.jpg" />
-          </picture>
-        </div>
-        <div class="contents-right" style="text-align: left">
-          <h3 style="text-align: center">Smart Overhead Tank</h3>
-          <ul style="color:rgb(0, 0, 0);">
-            <li>Designed to fulfill the course requirements of the Microprocessors and interfacing course.</li>
-            <li>The Embedded system was designed to maintain the level of home overhead tanks controlling the pumps in the tanks using an 8086
-              microprocessor.</li>  
-            <li>The circuit was successfully simulated in Proteus.</li>
-         </ul>
-        <p style="text-align: center">
-          <a class="project-link" target="_blank" href="https://github.com/offjangir/SmartOverheadTank"
-            >Check it out!</a>
-        </p>
-        </div>
-      </div>
-      <div class="user-projects">
-        <div class="images-right">
-          <h3></h3>
-          <picture>
-            <source type="image/webp" srcset="./assets/img/webp/ledpad.webp" alt="LED-Octapad" />
-            <img alt="LED-Octapad" src="./assets/img/jpg/ledpad.jpg" />
-          </picture>
-        </div>
-        <div  class="contents" style="text-align: left">
-          <h3 style="text-align: center">LED-Octapad</h3>
-          <ul style="color:rgb(0, 0, 0);">
-            <li>Led Octapad is a MIDI controller which can play not just one but many different instruments. The pads are dynamic, reacting in real-time to your
-              touch, while also sending MIDI signals to your computer to play, say a virtual drum machine, or a virtual piano.</li>
-            <li>In parallel, the pads also generate multiple beautiful color patterns using 300+ neopixels.</li>
-         </ul>
-        <p style="text-align: center">
-          <a class="project-link" target="_blank" href="https://github.com/offjangir/LEDHexapad"
-          >Check it out!</a>
-        </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="user-details">
-      </div>
-      <div class="user">
-        <!-- Technology Stack #1: Languages -->
-        <div class="tech">
-          <h2>Programming</h2>
-          <i class="devicon-c-plain colored"></i>
-          <i class="devicon-cplusplus-plain-wordmark colored"></i>
-          <i class="devicon-python-plain colored"></i>
-          <i class="devicon-java-plain colored"></i>
-          <p>C | C++ | Python | Java | Bash | Verilog</p>
-        </div>
-
-        <!-- Technology Stack #2: Front-End -->
-        <div class="tech">
-          <h2>Skills</h2>
-          <img src="./assets/img/jpg/skill.jpeg" width="260px" style="display: inline;" />
-          <p> Control Systems | State Estimation | Navigation | Embedded Systems | IoT </p>
-        </div>
-
-        <!-- Technology Stack #3: Back-End -->
-        <div class="tech">
-          <h2>Tools</h2>
-          <img src="./assets/img/jpg/ros.png" width="82px" style="display: inline;" />
-          <img src="./assets/img/jpg/ten.png" width="82px" style="display: inline;" />
-          <img src="./assets/img/jpg/gaz.png" width="82px" style="display: inline;" />
-          <img src="./assets/img/jpg/mat.jpeg" width="70px" style="display: inline;" />
-          <img src="./assets/img/jpg/ard.png" width="70px" style="display: inline;" />
-          <p>ROS | TensorFlow | Gazebo | Matlab & Simulink | Arduino | Proteus | LabVIEW </p>
-        </div>
-
-        <!-- Technology Stack #4: Tools -->
-      </div>
-    </section>
-
-
-    <section id="about">
-      <!-- User Introduction-->
-      <div class="user-details">
-        <h1>Teaching</h1>
-      </div>
-      <p style="color:rgb(0, 0, 0);">
-        Quark Summer term Project Instructor :
-      <ul style="color:rgb(0, 0, 0);">
-        <li>Aerial Robotics : Introduction to Path Planning and Perception <a href="https://drive.google.com/file/d/12Izo1AdTj2YZRF7mX6SA5aDu5o6Keupf/view?usp=sharing">Certificate</a> </li>
-        <li>Intro to Mechatronics</li>
-     </ul>
-    </p>
-      </section>
-
-
-      <section id="about">
-        <!-- User Introduction-->
-        <div class="user-details">
-          <h1>Extracurricular</h1>
-          <p >
-    
-          </p>
-        </div>
-        <p style="color:rgb(0, 0, 0);">
-          Quark Summer term Project Instructor :
-        <ul style="color:rgb(0, 0, 0);">
-          <li><a href="https://erc-bpgc.github.io/about_us.html">Electronics and Robotics Club Bits Goa </a> : Inventory Head(2020-21), Core Member(2019-Present)   </li>
-          <li><a href="https://devsoc.club/">Developers Society, Bits Goa</a> : Core Member(2019-Present)</li>
-       </ul>
-      </p>
-        </section>
-
-
-    <footer class="footer" >
-      <p>&copy; Yash Jangir, 2021</p>
-    </footer>
-
-    <!-- Import JS: Particles Theme -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <!-- Import JS: Sweet Scroll -->
-    <script src="./assets/js/sweet-scroll.min.js"></script>
-    <!-- Import JS: Google Analytics -->
-    <script src="./assets/js/google-analytics.js"></script>
-    <!-- Import JS: Main Script -->
-    <script src="./assets/js/main.js"></script>
+          setTimeout(function(){
+            intro1.classList.remove('typing');
+            intro1.classList.add('done');
+            
+            // Step 2: Type second line
+            setTimeout(function(){
+              intro2.textContent = "If you're here, you probably want to know a bit more about me.";
+              intro2.style.setProperty('--chars', 57);
+              intro2.style.setProperty('--duration', '3.2s');
+              intro2.classList.add('typing');
+              
+              setTimeout(function(){
+                intro2.classList.remove('typing');
+                intro2.classList.add('done');
+                
+                // Step 3: Type third line
+                setTimeout(function(){
+                  intro3.textContent = "So here's the tea ☕:";
+                  intro3.style.setProperty('--chars', 16);
+                  intro3.style.setProperty('--duration', '1.2s');
+                  intro3.classList.add('typing');
+                  
+                  setTimeout(function(){
+                    intro3.classList.remove('typing');
+                    intro3.classList.add('done');
+                    
+                    // Step 4: Show subtitle and actions
+                    setTimeout(function(){
+                      subtitle.style.opacity = '1';
+                      subtitle.style.transition = 'opacity 1s ease';
+                    }, 400);
+                    setTimeout(function(){
+                      actions.style.opacity = '1';
+                      actions.style.transition = 'opacity 1s ease';
+                    }, 800);
+                  }, 1300);
+                }, 400);
+              }, 3300);
+            }, 600);
+          }, 1900);
+        }, 800);
+      })();
+      
+      // Theme toggle
+      (function(){
+        var themeBtn = document.getElementById('toggle-theme');
+        var themeIcon = document.getElementById('theme-icon');
+        var pref = localStorage.getItem('theme');
+        if (!pref && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          pref = 'dark';
+        }
+        if (pref) document.documentElement.setAttribute('data-theme', pref);
+        
+        function setIcon(){ 
+          themeIcon.textContent = (document.documentElement.getAttribute('data-theme') === 'dark') ? '🌙' : '☀️';
+        }
+        setIcon();
+        
+        themeBtn.addEventListener('click', function(){
+          var curr = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', curr);
+          localStorage.setItem('theme', curr);
+          setIcon();
+        });
+      })();
+      
+       // Language toggle - manual only
+       (function(){
+         var btn = document.getElementById('toggle-lang');
+         var intro1 = document.getElementById('intro-1');
+         var lang = 'en'; // Always start with English
+         
+         function updateIntroName(){
+           var nameSpan = intro1.querySelector('.intro-highlight');
+           if (nameSpan) {
+             var nameText = nameSpan.getAttribute(lang === 'en' ? 'data-name-en' : 'data-name-hi');
+             nameSpan.style.transition = 'opacity 0.4s ease';
+             nameSpan.style.opacity = '0';
+             setTimeout(function(){
+               nameSpan.textContent = nameText;
+               nameSpan.style.opacity = '1';
+             }, 400);
+           }
+         }
+         
+         function toggleLanguage(){
+           lang = lang === 'en' ? 'hi' : 'en';
+           localStorage.setItem('lang', lang);
+           updateIntroName();
+         }
+         
+         // Manual toggle only
+         btn.addEventListener('click', function(){
+           toggleLanguage();
+         });
+       })();
+      
+      // Reveal publications on scroll
+      (function(){
+        var pubs = Array.prototype.slice.call(document.querySelectorAll('.pub'));
+        if (!('IntersectionObserver' in window)) { pubs.forEach(function(p){ p.classList.add('visible'); }); return; }
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        pubs.forEach(function(p){ io.observe(p); });
+      })();
+    </script>
   </body>
 </html>
