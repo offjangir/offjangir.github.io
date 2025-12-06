@@ -40,6 +40,11 @@
       .title { font-weight:600; font-size:19px; line-height:1.4; margin-bottom:6px; }
       .authors { font-size:18px; line-height:1.5; margin-bottom:4px; }
       .venue { color:var(--muted); font-size:17px; line-height:1.5; margin-bottom:8px; }
+      .links { display:flex; gap:12px; flex-wrap:wrap; margin-top:4px; }
+      .links a { font-size:16px; }
+      .awards-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; }
+      .award-item { padding:12px 0; border-bottom:1px solid var(--border); }
+      .award-item:last-child { border-bottom:none; }
       footer { text-align:center; color:var(--muted); margin-top:44px; font-size:16px; }
       .fade-in { opacity:0; transform:translateY(8px); animation:fade .7s ease forwards; }
       .fade-in.delay-1 { animation-delay:.15s; }
@@ -80,74 +85,134 @@
           <a href="https://github.com/offjangir" target="_blank" rel="noopener">GitHub</a>.
         </p>
         <div class="actions fade-in delay-1" style="opacity:0;">
-          <a class="btn" href="mailto:offjangir@gmail.com">Contact</a>
+          <a class="btn" href="mailto:yjangir@andrew.cmu.edu">Contact</a>
           <a class="btn" href="https://scholar.google.com/citations?user=ZzyKpUcAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
           <a class="btn" href="https://www.linkedin.com/in/yash-jangir-6a71651a1/" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn" href="https://github.com/offjangir" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://drive.google.com/file/d/1OsYLAAdPBBkUk1rKiD7ikJbsZeA-AJhO/view?usp=sharing" target="_blank" rel="noopener">CV</a>
+          <a class="btn" href="https://drive.google.com/drive/u/0/folders/1xK145RheaadMqRr7yFLdnjXH31uUD7Z3" target="_blank" rel="noopener">CV</a>
           <button class="btn" id="toggle-lang">नाम/Name</button>
           <button class="btn btn-theme" id="toggle-theme"><span id="theme-icon">☀️</span> Theme</button>
         </div>
       </section>
 
+
+      <section id="awards" class="fade-in delay-2">
+        <h2>Awards, Invited Talks and Service</h2>
+        <ul class="awards-list">
+          <li class="award-item">Invited Talk at <strong>1X Robotics</strong> on Scaling VLA Evaluation via Real-to-Sim</li>
+          <li class="award-item">Invited Talk at <strong>NVIDIA Robotics</strong> on RobotArena ∞: Unlimited Robot Benchmarking via Real-to-Sim Translation</li>
+          <li class="award-item">Selected as one of 50 students worldwide for the <strong>Robotics Institute Summer Scholars (RISS) Program</strong>, CMU</li>
+          <li class="award-item"><strong>Best Paper Award</strong>, IEEE IRIA 2021</li>
+          <li class="award-item"><strong>Best Paper Finalist</strong>, IEEE ICMA 2022</li>
+          <li class="award-item"><strong>Reviewer</strong>: Conference on Robot Learning (CoRL), IEEE Transactions on Pattern Analysis and Machine Intelligence</li>
+        </ul>
+      </section>
       
 
-      <section id="publications">
-        <h2>Selected Projects and Publications</h2>
+      <section id="Selected publications">
+        <h2>Selected Publications</h2>
         <ul class="pub-list" id="pub-list">
           <li class="pub">
             <img class="thumb" alt="RobotArena" src="./assets/img/jpg/robotarena.png" />
             <div class="meta">
               <div class="title">RobotArena ∞: Unlimited Robot Benchmarking via Real-to-Sim Translation</div>
-              <!-- <div class="authors"><strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong></div> -->
-              <div class="venue">Paper coming soon!</div>
-              <!-- <div><strong>In Progress</strong></div> -->
+              <div class="authors"><strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong>, Yidi Zhang<sup>*</sup>, Kashu Yamazaki<sup>*</sup>, Chenyu Zhang<sup>*</sup>, Kuan-Hsun Tu, Tsung-Wei Ke, Lei Ke, Yonatan Bisk, Katerina Fragkiadaki</div>
+              <div class="venue">Preprint, 2026 [Under Review]</div>
+              <div class="links">
+                <a href="#" target="_blank" rel="noopener"><strong>Project Page</strong></a> · 
+                <a href="#" target="_blank" rel="noopener"><strong>arXiv</strong></a>
+              </div>
             </div>
           </li>
           <li class="pub">
+            <img class="thumb" alt="IROS 2023" src="./assets/img/jpg/servo_paper.png" />
+            <div class="meta">
+              <div class="title">Image-based visual servo control for aerial manipulation using a fully‑actuated UAV</div>
+              <div class="authors">Guanqi He<sup>*</sup>, <strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span><sup>*</sup></strong>, Junyi Geng, Mohammadreza Mousaei, Dongwei Bai, Sebastian Scherer</div>
+              <div class="venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2023</div>
+              <div class="links">
+                <a href="https://ieeexplore.ieee.org/document/10342145" target="_blank" rel="noopener"><strong>Paper</strong></a>
+              </div>
+            </div>
+          </li>
+         </ul>
+    </section>
+
+      <section id="projects" class="fade-in delay-2">
+        <h2>Selected Projects</h2>
+        <ul class="pub-list" id="project-list">
+          <li class="pub">
             <img class="thumb" alt="ImagineAct" src="./assets/img/jpg/imagineAct.png" />
             <div class="meta">
-              <div class="title">ImagineAct: Improving VLAs through World Dynamics modelling</div>
-              <div class="authors"><strong><span class="a-name" data-en=" Yash Jangir, Karan Mirakhor, Tanya Choudhary" data-hi="यश जांगिड़">Yash Jangir, Karan Mirakhor, Tanya Choudhary</span></strong></div>
-              <div class="venue">Coming soon!</div>
-              <!-- <div><strong>In Progress</strong></div> -->
+              <div class="title">ImagineAct: Closed-Loop Vision-Language-Action with World Modeling</div>
+              <div class="authors"><strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span><sup>*</sup></strong>, Karan Mirakhor<sup>*</sup>, Tanya Choudhary<sup>*</sup></div>
+              <div class="venue">Project (Sept 2025 - Present)</div>
+              <div class="links">
+                <a href="https://github.com/offjangir/ImagineAct" target="_blank" rel="noopener"><strong>GitHub</strong></a>
+              </div>
+            </div>
+          </li>
+          <li class="pub">
+            <img class="thumb" alt="SpatialPi" src="./assets/img/jpg/imagineAct.png" />
+            <div class="meta">
+              <div class="title">SpatialPi: Forcing Spatial Priors in Vision-Language-Action Models</div>
+              <div class="authors">Yidi Zhang<sup>*</sup>, <strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span><sup>*</sup></strong></div>
+              <div class="venue">Project (Sept 2025 - Present)</div>
+              <div class="links">
+                <a href="https://github.com/offjangir/SpatialPi" target="_blank" rel="noopener"><strong>GitHub</strong></a>
+              </div>
             </div>
           </li>
           <li class="pub">
             <img class="thumb" alt="ReMov3r" src="./assets/img/jpg/remov3r.png" />
             <div class="meta">
               <div class="title">ReMov3r: Real-Time Monocular Video to 3D Reconstruction</div>
-              <div class="authors"><strong><span class="a-name" data-en="Yash Jangir, Karan Mirakhor, Tanya Choudharyr" data-hi="यश जांगिड़">Yash Jangir, Karan Mirakhor, Tanya Choudhary</span></strong></div>
-              <!-- <div class="venue">Project Report</div> -->
-              <div><a href="./assets/img/jpg/L3D_Project_Proposal.pdf" target="_blank" rel="noopener"><strong>Report</strong></a></div>
-        </div>
+              <div class="authors"><strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span><sup>*</sup></strong>, Karan Mirakhor<sup>*</sup>, Tanya Choudhary<sup>*</sup></div>
+              <div class="venue">Project (Sept 2024 - Dec 2024)</div>
+              <div class="links">
+                <a href="https://github.com/offjangir/ReMov3R" target="_blank" rel="noopener"><strong>GitHub</strong></a> · 
+                <a href="./assets/img/jpg/L3D_Project_Proposal.pdf" target="_blank" rel="noopener"><strong>Report</strong></a>
+              </div>
+            </div>
           </li>
           <li class="pub">
-            <img class="thumb" alt="IROS 2023" src="./assets/img/jpg/servo_paper.png" />
+            <img class="thumb" alt="3D Inpainting" src="./assets/img/jpg/3d_inpaint.png" />
             <div class="meta">
-              <div class="title">Image-based visual servo control for aerial manipulation using a fully‑actuated UAV</div>
-              <div class="authors"><strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span><sup>*</sup></strong>, Guanqi He<sup>*</sup>, Junyi Geng, Mohammadreza Mousaei, Dongwei Bai, Sebastian Scherer</div>
-              <div class="venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2023</div>
-              <div><a href="https://ieeexplore.ieee.org/document/10342145" target="_blank" rel="noopener"><strong>Paper</strong></a></div>
-        </div>
+              <div class="title">3D Scene Inpainting with Text-to-Image Models and ControlNet</div>
+              <div class="authors"><strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong></div>
+              <div class="venue">Project (Oct 2025 - Nov 2025)</div>
+              <div class="links">
+                <a href="https://github.com/offjangir/Scene_Inpainting" target="_blank" rel="noopener"><strong>GitHub</strong></a>
+              </div>
+            </div>
           </li>
+        </ul>
+      </section>
+
+      <section id="Other publications">
+        <h2>Other Publications</h2>
+        <ul class="pub-list" id="pub-list">
           <li class="pub">
             <img class="thumb" alt="IRIA 2021" src="./assets/img/jpg/autoland.png" />
             <div class="meta">
               <div class="title">A generalized Kalman filter augmented deep‑learning approach for autonomous landing in MAVs</div>
               <div class="authors">Pranay Mathur, <strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong>, Neena Goveas</div>
-              <div class="venue">Int. Symposium of Asian Control Association on Intelligent Robotics and Industrial Automation (IRIA), 2021 — Best Paper Award</div>
-              <div><a href="https://ieeexplore.ieee.org/document/9588758" target="_blank" rel="noopener"><strong>Paper</strong></a></div>
-      </div>
+              <div class="venue">Int. Symposium of Asian Control Association on Intelligent Robotics and Industrial Automation (IRIA), 2021 — <strong>Best Paper Award</strong></div>
+              <div class="links">
+                <a href="https://ieeexplore.ieee.org/document/9588758" target="_blank" rel="noopener"><strong>Paper</strong></a>
+              </div>
+            </div>
           </li>
           <li class="pub">
             <img class="thumb" alt="ICMA 2022" src="./assets/img/jpg/manipulation.png" />
             <div class="meta">
               <div class="title">Implementation and testing of force control on a spherical articulated manipulator</div>
               <div class="authors">Prathamesh Saraf, <strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong>, R. N. Ponnalagu</div>
-              <div class="venue">IEEE International Conference on Mechatronics and Automation (ICMA), 2022 — Finalist Best Paper Award</div>
-              <div><a href="https://ieeexplore.ieee.org/document/9856174" target="_blank" rel="noopener"><strong>Paper</strong></a></div>
-        </div>
+              <div class="venue">IEEE International Conference on Mechatronics and Automation (ICMA), 2022 — <strong>Finalist Best Paper Award</strong></div>
+              <div class="links">
+                <a href="https://ieeexplore.ieee.org/document/9856174" target="_blank" rel="noopener"><strong>Paper</strong></a>
+              </div>
+            </div>
           </li>
           <li class="pub">
             <img class="thumb" alt="ASCC 2022" src="./assets/img/jpg/purepusuit.png" />
@@ -155,20 +220,15 @@
               <div class="title">3D pure pursuit guidance of drones for autonomous precision landing</div>
               <div class="authors">Kaushal Kishore, Sagar Dalai, <strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong>, Samarth Singh, M Rohan, D Shashank, Sree S S Katta, S K Saha</div>
               <div class="venue">13th Asian Control Conference (ASCC), 2022</div>
-              <div><a href="https://ieeexplore.ieee.org/document/9828198" target="_blank" rel="noopener"><strong>Paper</strong></a></div>
-        <!-- </div> -->
-          <!-- </li>
-          <li class="pub">
-            <img class="thumb" alt="ELVIS" src="./assets/img/jpg/elvis.png" />
-            <div class="meta">
-              <div class="title">ELVIS: Efficient line detections and tracking for visual servoing</div>
-              <div class="authors"><strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong>, Junyi Geng, Sebastian Scherer</div>
-              <div class="venue">RISS Working Papers Journal, 2022</div>
-              <div><a href="https://drive.google.com/file/d/1Idqf3vfNLuw2NfbLQ2e-gu1rd8VHj8XD/view" target="_blank" rel="noopener"><strong>Poster</strong></a> · <a href="https://www.youtube.com/watch?v=9Ki90lQnqnQ" target="_blank" rel="noopener"><strong>Video</strong></a></div> -->
-      </div>
+              <div class="links">
+                <a href="https://ieeexplore.ieee.org/document/9828198" target="_blank" rel="noopener"><strong>Paper</strong></a>
+              </div>
+            </div>
           </li>
          </ul>
     </section>
+
+ 
 
       <footer>
         © Yash Jangir, 2025
