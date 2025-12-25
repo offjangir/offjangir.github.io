@@ -13,9 +13,9 @@
       a { color:var(--link); text-decoration:none; }
       a:hover { text-decoration:underline; }
       .container { max-width:1100px; margin:0 auto; padding:60px 40px 100px; }
-      header { text-align:center; margin-top:40px; margin-bottom:60px; min-height:280px; }
+      header { text-align:center; margin-top:40px; margin-bottom:0; min-height:280px; }
       .avatar { width:160px; height:160px; border-radius:999px; object-fit:cover; border:2px solid var(--border); box-shadow:0 8px 24px var(--shadow); display:block; margin:0 auto 30px; }
-      .intro-text { font-size:32px; font-weight:500; letter-spacing:-0.01em; margin:0 0 20px; min-height:140px; line-height:1.6; color:var(--muted); }
+      .intro-text { font-size:32px; font-weight:500; letter-spacing:-0.01em; margin:0 0 0; min-height:auto; line-height:1.6; color:var(--muted); }
       .intro-line { display:block; opacity:0; }
       .intro-line.typing { opacity:1; overflow:hidden; border-right:2px solid var(--text); white-space:nowrap; animation: typing-intro steps(var(--chars)) var(--duration) forwards, caret .75s steps(1) infinite; }
       .intro-line.done { opacity:1; border-right:none; animation:none; }
@@ -23,12 +23,12 @@
       @keyframes typing-intro { from { width:0; } to { width:100%; } }
       @keyframes caret { 50% { border-right-color: transparent; } }
       .name { font-size:48px; font-weight:800; letter-spacing:-0.02em; margin:16px 0 0; background:linear-gradient(135deg, var(--link), #8b5cf6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-      .subtitle { color:var(--muted); margin:12px 0 24px; font-size:24px; font-weight:500; }
+      .subtitle { color:var(--muted); margin:0 0 0; font-size:24px; font-weight:500; }
       .actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:10px; }
       .btn { border:1px solid var(--border); background:transparent; color:var(--text); padding:12px 20px; border-radius:10px; cursor:pointer; box-shadow:0 1px 2px var(--shadow); transition:transform .2s ease, background .2s ease, box-shadow .2s ease; font-size:17px; }
       .btn:hover { background:rgba(148,163,184,0.08); transform:translateY(-1px); box-shadow:0 6px 14px var(--shadow); }
       .btn-theme { display:inline-flex; align-items:center; gap:6px; }
-      section { margin-top:56px; }
+      section { margin-top:0; }
       section p { margin-bottom: 20px; line-height: 1.8; font-size: 20px; }
       section p:last-child { margin-bottom: 0; }
       h2 { font-size:34px; margin:0 0 28px; font-weight:700; color:var(--accent); letter-spacing:-0.01em; }
@@ -63,10 +63,8 @@
         <img class="avatar" src="./assets/img/jpg/myimage.png" alt="Profile" />
         <div class="intro-text">
           <span class="intro-line" id="intro-1">
-            Hi! I'm <span class="intro-highlight" data-name-en="Yash Jangir" data-name-hi="यश जांगिड़">Yash Jangir</span>
+            Hi! I'm <span class="intro-highlight">Yash Jangir</span>
           </span>
-          <span class="intro-line" id="intro-2" data-text="If you're here, you probably want to know a bit more about me."></span>
-          <span class="intro-line" id="intro-3" data-text="So here's the tea ☕:"></span>
         </div>
         <div class="subtitle" style="opacity:0;">Graduate Student • Carnegie Mellon University</div>
       </header>
@@ -90,7 +88,6 @@
           <a class="btn" href="https://www.linkedin.com/in/yash-jangir-6a71651a1/" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn" href="https://github.com/offjangir" target="_blank" rel="noopener">GitHub</a>
           <a class="btn" href="https://drive.google.com/drive/u/0/folders/1xK145RheaadMqRr7yFLdnjXH31uUD7Z3" target="_blank" rel="noopener">CV</a>
-          <button class="btn" id="toggle-lang">नाम/Name</button>
           <button class="btn btn-theme" id="toggle-theme"><span id="theme-icon">☀️</span> Theme</button>
         </div>
       </section>
@@ -116,7 +113,7 @@
             <img class="thumb" alt="RobotArena" src="./assets/img/jpg/robotarena.png" />
             <div class="meta">
               <div class="title">RobotArena ∞: Unlimited Robot Benchmarking via Real-to-Sim Translation</div>
-              <div class="authors"><strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong>, Yidi Zhang<sup>*</sup>, Kashu Yamazaki<sup>*</sup>, Chenyu Zhang<sup>*</sup>, Kuan-Hsun Tu, Tsung-Wei Ke, Lei Ke, Yonatan Bisk, Katerina Fragkiadaki</div>
+              <div class="authors"><strong>Yash Jangir</strong>, Yidi Zhang<sup>*</sup>, Kashu Yamazaki<sup>*</sup>, Chenyu Zhang<sup>*</sup>, Kuan-Hsun Tu, Tsung-Wei Ke, Lei Ke, Yonatan Bisk, Katerina Fragkiadaki</div>
               <div class="venue">Preprint, 2026 [Under Review]</div>
               <div class="links">
                 <a href="https://robotarenainf.github.io" target="_blank" rel="noopener"><strong>Project Page</strong></a> · 
@@ -128,7 +125,7 @@
             <img class="thumb" alt="IROS 2023" src="./assets/img/jpg/servo_paper.png" />
             <div class="meta">
               <div class="title">Image-based visual servo control for aerial manipulation using a fully‑actuated UAV</div>
-              <div class="authors">Guanqi He<sup>*</sup>, <strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span><sup>*</sup></strong>, Junyi Geng, Mohammadreza Mousaei, Dongwei Bai, Sebastian Scherer</div>
+              <div class="authors">Guanqi He<sup>*</sup>, <strong>Yash Jangir<sup>*</sup></strong>, Junyi Geng, Mohammadreza Mousaei, Dongwei Bai, Sebastian Scherer</div>
               <div class="venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2023</div>
               <div class="links">
                 <a href="https://ieeexplore.ieee.org/document/10342145" target="_blank" rel="noopener"><strong>Paper</strong></a>
@@ -145,7 +142,7 @@
             <img class="thumb" alt="ImagineAct" src="./assets/img/jpg/imagineAct.png" />
             <div class="meta">
               <div class="title">ImagineAct: Closed-Loop Vision-Language-Action with World Modeling</div>
-              <div class="authors"><strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span><sup>*</sup></strong>, Karan Mirakhor<sup>*</sup>, Tanya Choudhary<sup>*</sup></div>
+              <div class="authors"><strong>Yash Jangir<sup>*</sup></strong>, Karan Mirakhor<sup>*</sup>, Tanya Choudhary<sup>*</sup></div>
               <div class="venue">Project (Sept 2025 - Present)</div>
               <div class="links">
                 <a href="https://github.com/offjangir/ImagineAct" target="_blank" rel="noopener"><strong>GitHub</strong></a>
@@ -156,7 +153,7 @@
             <img class="thumb" alt="SpatialPi" src="./assets/img/jpg/imagineAct.png" />
             <div class="meta">
               <div class="title">SpatialPi: Forcing Spatial Priors in Vision-Language-Action Models</div>
-              <div class="authors">Yidi Zhang<sup>*</sup>, <strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span><sup>*</sup></strong></div>
+              <div class="authors">Yidi Zhang<sup>*</sup>, <strong>Yash Jangir<sup>*</sup></strong></div>
               <div class="venue">Project (Sept 2025 - Present)</div>
               <div class="links">
                 <a href="https://github.com/offjangir/SpatialPi" target="_blank" rel="noopener"><strong>GitHub</strong></a>
@@ -167,7 +164,7 @@
             <img class="thumb" alt="ReMov3r" src="./assets/img/jpg/remov3r.png" />
             <div class="meta">
               <div class="title">ReMov3r: Real-Time Monocular Video to 3D Reconstruction</div>
-              <div class="authors"><strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span><sup>*</sup></strong>, Karan Mirakhor<sup>*</sup>, Tanya Choudhary<sup>*</sup></div>
+              <div class="authors"><strong>Yash Jangir<sup>*</sup></strong>, Karan Mirakhor<sup>*</sup>, Tanya Choudhary<sup>*</sup></div>
               <div class="venue">Project (Sept 2024 - Dec 2024)</div>
               <div class="links">
                 <a href="https://github.com/offjangir/ReMov3R" target="_blank" rel="noopener"><strong>GitHub</strong></a> · 
@@ -179,7 +176,7 @@
             <img class="thumb" alt="3D Inpainting" src="./assets/img/jpg/3d_inpaint.png" />
             <div class="meta">
               <div class="title">3D Scene Inpainting with Text-to-Image Models and ControlNet</div>
-              <div class="authors"><strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong></div>
+              <div class="authors"><strong>Yash Jangir</strong></div>
               <div class="venue">Project (Oct 2025 - Nov 2025)</div>
               <div class="links">
                 <a href="https://github.com/offjangir/Scene_Inpainting" target="_blank" rel="noopener"><strong>GitHub</strong></a>
@@ -196,7 +193,7 @@
             <img class="thumb" alt="IRIA 2021" src="./assets/img/jpg/autoland.png" />
             <div class="meta">
               <div class="title">A generalized Kalman filter augmented deep‑learning approach for autonomous landing in MAVs</div>
-              <div class="authors">Pranay Mathur, <strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong>, Neena Goveas</div>
+              <div class="authors">Pranay Mathur, <strong>Yash Jangir</strong>, Neena Goveas</div>
               <div class="venue">Int. Symposium of Asian Control Association on Intelligent Robotics and Industrial Automation (IRIA), 2021 — <strong>Best Paper Award</strong></div>
               <div class="links">
                 <a href="https://ieeexplore.ieee.org/document/9588758" target="_blank" rel="noopener"><strong>Paper</strong></a>
@@ -207,7 +204,7 @@
             <img class="thumb" alt="ICMA 2022" src="./assets/img/jpg/manipulation.png" />
             <div class="meta">
               <div class="title">Implementation and testing of force control on a spherical articulated manipulator</div>
-              <div class="authors">Prathamesh Saraf, <strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong>, R. N. Ponnalagu</div>
+              <div class="authors">Prathamesh Saraf, <strong>Yash Jangir</strong>, R. N. Ponnalagu</div>
               <div class="venue">IEEE International Conference on Mechatronics and Automation (ICMA), 2022 — <strong>Finalist Best Paper Award</strong></div>
               <div class="links">
                 <a href="https://ieeexplore.ieee.org/document/9856174" target="_blank" rel="noopener"><strong>Paper</strong></a>
@@ -218,7 +215,7 @@
             <img class="thumb" alt="ASCC 2022" src="./assets/img/jpg/purepusuit.png" />
             <div class="meta">
               <div class="title">3D pure pursuit guidance of drones for autonomous precision landing</div>
-              <div class="authors">Kaushal Kishore, Sagar Dalai, <strong><span class="a-name" data-en="Yash Jangir" data-hi="यश जांगिड़">Yash Jangir</span></strong>, Samarth Singh, M Rohan, D Shashank, Sree S S Katta, S K Saha</div>
+              <div class="authors">Kaushal Kishore, Sagar Dalai, <strong>Yash Jangir</strong>, Samarth Singh, M Rohan, D Shashank, Sree S S Katta, S K Saha</div>
               <div class="venue">13th Asian Control Conference (ASCC), 2022</div>
               <div class="links">
                 <a href="https://ieeexplore.ieee.org/document/9828198" target="_blank" rel="noopener"><strong>Paper</strong></a>
@@ -239,19 +236,16 @@
       // Typewriter intro animation
       (function(){
         var intro1 = document.getElementById('intro-1');
-        var intro2 = document.getElementById('intro-2');
-        var intro3 = document.getElementById('intro-3');
         var nameSpan = intro1.querySelector('.intro-highlight');
         var subtitle = document.querySelector('.subtitle');
         var actions = document.querySelector('.actions');
         
-        var lang = localStorage.getItem('lang') || 'en';
-        var nameText = nameSpan.getAttribute(lang === 'en' ? 'data-name-en' : 'data-name-hi');
+        var nameText = "Yash Jangir";
         var fullText = "Hi! I'm " + nameText;
         
-        // Step 1: Type "Hi! I'm Yash Jangir"
+        // Type "Hi! I'm Yash Jangir"
         setTimeout(function(){
-          intro1.innerHTML = "Hi! I'm <span class='intro-highlight' data-name-en='Yash Jangir' data-name-hi='यश जांगीर'>" + nameText + "</span>";
+          intro1.innerHTML = "Hi! I'm <span class='intro-highlight'>" + nameText + "</span>";
           intro1.style.setProperty('--chars', fullText.length);
           intro1.style.setProperty('--duration', '1.8s');
           intro1.classList.add('typing');
@@ -260,41 +254,15 @@
             intro1.classList.remove('typing');
             intro1.classList.add('done');
             
-            // Step 2: Type second line
+            // Show subtitle and actions
             setTimeout(function(){
-              intro2.textContent = "If you're here, you probably want to know a bit more about me.";
-              intro2.style.setProperty('--chars', 57);
-              intro2.style.setProperty('--duration', '3.2s');
-              intro2.classList.add('typing');
-              
-              setTimeout(function(){
-                intro2.classList.remove('typing');
-                intro2.classList.add('done');
-                
-                // Step 3: Type third line
-                setTimeout(function(){
-                  intro3.textContent = "So here's the tea ☕:";
-                  intro3.style.setProperty('--chars', 16);
-                  intro3.style.setProperty('--duration', '1.2s');
-                  intro3.classList.add('typing');
-                  
-                  setTimeout(function(){
-                    intro3.classList.remove('typing');
-                    intro3.classList.add('done');
-                    
-                    // Step 4: Show subtitle and actions
-                    setTimeout(function(){
-                      subtitle.style.opacity = '1';
-                      subtitle.style.transition = 'opacity 1s ease';
-                    }, 400);
-                    setTimeout(function(){
-                      actions.style.opacity = '1';
-                      actions.style.transition = 'opacity 1s ease';
-                    }, 800);
-                  }, 1300);
-                }, 400);
-              }, 3300);
-            }, 600);
+              subtitle.style.opacity = '1';
+              subtitle.style.transition = 'opacity 1s ease';
+            }, 400);
+            setTimeout(function(){
+              actions.style.opacity = '1';
+              actions.style.transition = 'opacity 1s ease';
+            }, 800);
           }, 1900);
         }, 800);
       })();
@@ -321,37 +289,6 @@
           setIcon();
         });
       })();
-      
-       // Language toggle - manual only
-       (function(){
-         var btn = document.getElementById('toggle-lang');
-         var intro1 = document.getElementById('intro-1');
-         var lang = 'en'; // Always start with English
-         
-         function updateIntroName(){
-           var nameSpan = intro1.querySelector('.intro-highlight');
-           if (nameSpan) {
-             var nameText = nameSpan.getAttribute(lang === 'en' ? 'data-name-en' : 'data-name-hi');
-             nameSpan.style.transition = 'opacity 0.4s ease';
-             nameSpan.style.opacity = '0';
-             setTimeout(function(){
-               nameSpan.textContent = nameText;
-               nameSpan.style.opacity = '1';
-             }, 400);
-           }
-         }
-         
-         function toggleLanguage(){
-           lang = lang === 'en' ? 'hi' : 'en';
-           localStorage.setItem('lang', lang);
-           updateIntroName();
-         }
-         
-         // Manual toggle only
-         btn.addEventListener('click', function(){
-           toggleLanguage();
-         });
-       })();
       
       // Reveal publications on scroll
       (function(){
