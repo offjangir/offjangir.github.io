@@ -4,301 +4,906 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Yash Jangir</title>
-    <meta name="description" content="Research profile of Yash Jangir" />
-    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
-    <style>
-      :root { --bg:#ffffff; --text:#0e0e10; --muted:#5b6472; --link:#0ea5e9; --border:#e5e7eb; --shadow:rgba(2,6,23,0.06); --accent:#111827; }
-      [data-theme="dark"] { --bg:#0a0c10; --text:#f3f4f6; --muted:#a3aab7; --link:#38bdf8; --border:#1f2937; --shadow:rgba(0,0,0,0.3); --accent:#cbd5e1; }
-      html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; line-height:1.75; font-size:20px; }
-      a { color:var(--link); text-decoration:none; }
-      a:hover { text-decoration:underline; }
-      .container { max-width:1100px; margin:0 auto; padding:60px 40px 100px; }
-      header { text-align:center; margin-top:40px; margin-bottom:0; min-height:280px; }
-      .avatar { width:160px; height:160px; border-radius:999px; object-fit:cover; border:2px solid var(--border); box-shadow:0 8px 24px var(--shadow); display:block; margin:0 auto 30px; }
-      .intro-text { font-size:32px; font-weight:500; letter-spacing:-0.01em; margin:0 0 0; min-height:auto; line-height:1.6; color:var(--muted); }
-      .intro-line { display:block; opacity:0; }
-      .intro-line.typing { opacity:1; overflow:hidden; border-right:2px solid var(--text); white-space:nowrap; animation: typing-intro steps(var(--chars)) var(--duration) forwards, caret .75s steps(1) infinite; }
-      .intro-line.done { opacity:1; border-right:none; animation:none; }
-      .intro-highlight { background:linear-gradient(135deg, var(--link), #8b5cf6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; font-size:36px; }
-      @keyframes typing-intro { from { width:0; } to { width:100%; } }
-      @keyframes caret { 50% { border-right-color: transparent; } }
-      .name { font-size:48px; font-weight:800; letter-spacing:-0.02em; margin:16px 0 0; background:linear-gradient(135deg, var(--link), #8b5cf6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-      .subtitle { color:var(--muted); margin:0 0 0; font-size:24px; font-weight:500; }
-      .actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:10px; }
-      .btn { border:1px solid var(--border); background:transparent; color:var(--text); padding:12px 20px; border-radius:10px; cursor:pointer; box-shadow:0 1px 2px var(--shadow); transition:transform .2s ease, background .2s ease, box-shadow .2s ease; font-size:17px; }
-      .btn:hover { background:rgba(148,163,184,0.08); transform:translateY(-1px); box-shadow:0 6px 14px var(--shadow); }
-      .btn-theme { display:inline-flex; align-items:center; gap:6px; }
-      section { margin-top:0; }
-      section p { margin-bottom: 20px; line-height: 1.8; font-size: 20px; }
-      section p:last-child { margin-bottom: 0; }
-      h2 { font-size:34px; margin:0 0 28px; font-weight:700; color:var(--accent); letter-spacing:-0.01em; }
-      .pub-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:28px; }
-      .pub { display:flex; gap:20px; align-items:flex-start; opacity:0; transform:translateY(8px); transition:opacity .6s ease, transform .6s ease; }
-      .pub.visible { opacity:1; transform:translateY(0); }
-      .thumb { width:150px; height:100px; object-fit:cover; border:1px solid var(--border); border-radius:8px; background:rgba(148,163,184,0.15); box-shadow:0 2px 8px var(--shadow); flex-shrink:0; }
-      .pub .meta { flex:1; }
-      .title { font-weight:600; font-size:19px; line-height:1.4; margin-bottom:6px; }
-      .authors { font-size:18px; line-height:1.5; margin-bottom:4px; }
-      .venue { color:var(--muted); font-size:17px; line-height:1.5; margin-bottom:8px; }
-      .links { display:flex; gap:12px; flex-wrap:wrap; margin-top:4px; }
-      .links a { font-size:16px; }
-      .awards-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; }
-      .award-item { padding:12px 0; border-bottom:1px solid var(--border); }
-      .award-item:last-child { border-bottom:none; }
-      footer { text-align:center; color:var(--muted); margin-top:44px; font-size:16px; }
-      .fade-in { opacity:0; transform:translateY(8px); animation:fade .7s ease forwards; }
-      .fade-in.delay-1 { animation-delay:.15s; }
-      .fade-in.delay-2 { animation-delay:.3s; }
-      @keyframes fade { to { opacity:1; transform:translateY(0); } }
-      @media (prefers-reduced-motion: reduce) {
-        .btn { transition:none; }
-        .pub, .fade-in, .intro-line.typing { animation:none; opacity:1; transform:none; border-right-color: transparent; }
+  <meta name="description" content="Yash Jangir — M.S. Robotics student at Carnegie Mellon University researching robot learning, VLA models, and real-to-sim alignment." />
+  <link rel="shortcut icon" href="./assets/img/jpg/logo/pageicon.png" />
+  <link rel="icon" type="image/png" href="./assets/img/jpg/logo/pageicon.png" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="./assets/css/theme.css" />
+  
+  <!-- Prevent flash of wrong theme -->
+  <script>
+    (function() {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
       }
-      @media (max-width:640px) { .pub { flex-direction:column; } .thumb { width:100%; height:160px; } .name{ font-size:32px; } .subtitle{ font-size:16px; } .intro-text{ font-size:22px; } }
-    </style>
+    })();
+  </script>
   </head>
   <body>
-    <div class="container">
-      <header class="fade-in">
-        <img class="avatar" src="./assets/img/jpg/myimage.png" alt="Profile" />
-        <div class="intro-text">
-          <span class="intro-line" id="intro-1">
-            Hi! I'm <span class="intro-highlight">Yash Jangir</span>
-          </span>
-        </div>
-        <div class="subtitle" style="opacity:0;">Graduate Student • Carnegie Mellon University</div>
-      </header>
-      <section id="about" class="fade-in delay-2">
-        <p> I'm a 2nd-year M.S. Robotics student at <strong>Carnegie Mellon University</strong>, advised by <a href="https://www.cs.cmu.edu/~katef/" target="_blank" rel="noopener">Prof. Katerina Fragkiadaki</a> and <a href="https://yonatanbisk.com/" target="_blank" rel="noopener">Prof. Yonatan Bisk</a>. 
-          I am interested in how robots can learn to act intelligently in diverse, real-world settings. My current research focuses on <strong>evaluating generalist robot policies</strong>, <strong>vision–language–action (VLA) models</strong>, and <strong>real-to-sim alignment</strong>. 
-          I am also interested in how <strong>world dynamics</strong> and <strong>video-to-3D representations</strong> can help robots better understand and interact with their environments. </p> 
-        
-        <p> Before grad school, I was a <a href="https://riss.ri.cmu.edu/" target="_blank" rel="noopener">Robotics Institute Summer Scholar (RISS)</a> at CMU, where I worked with 
-          <a href="https://www.ri.cmu.edu/ri-faculty/sebastian-scherer/" target="_blank" rel="noopener">Prof. Sebastian Scherer</a> and <a href="https://aerogjy.github.io/" target="_blank" rel="noopener">Prof. Junyi Geng</a> on
-          aerial manipulation and visual control. I also worked as a <strong>Robot Software Engineer</strong> at <a href="https://www.clutterbot.com/#About" target="_blank" rel="noopener">Clutterbot Robotics</a>, developing efficient
-          global relocalization methods for robots operating in unstructured environments with sparse maps. I completed my undergraduate studies at <strong>BITS Pilani, Goa</strong>. </p>
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="#" class="navbar-brand">YJ</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <div class="navbar-links" id="navbar-links">
+        <a href="#about" class="navbar-link">About</a>
+        <a href="#research" class="navbar-link">Research</a>
+        <a href="#experience" class="navbar-link">Experience</a>
+        <a href="#awards" class="navbar-link">Awards</a>
+        <a href="#writing" class="navbar-link">Writing</a>
+      </div>
       
-        <p>
-          I am always open to new ideas, collaborations or discussions (whatever it may be). Feel free to reach out! You can find my contact info, CV, and projects here, or visit my 
-          <a href="https://github.com/offjangir" target="_blank" rel="noopener">GitHub</a>.
-        </p>
-        <div class="actions fade-in delay-1" style="opacity:0;">
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
+        <!-- Moon icon (shown in dark mode) -->
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <!-- Sun icon (shown in light mode) -->
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       HERO SECTION (Two-Column: Left Profile, Right About)
+       ============================================ -->
+  <section class="hero" id="about">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- LEFT COLUMN: Profile -->
+        <div class="hero-left reveal">
+          <div class="hero-avatar-wrapper">
+            <div class="hero-avatar-glow"></div>
+            <img 
+              class="hero-avatar" 
+              src="./assets/img/jpg/myimage.png" 
+              alt="Yash Jangir" 
+              loading="eager"
+            />
+        </div>
+          
+          <h1 class="hero-name">Yash Jangir</h1>
+          <p class="hero-subtitle">M.S. Robotics • Carnegie Mellon University</p>
+          
+          <!-- Interest Chips -->
+          <div class="hero-chips">
+            <span class="chip">🤖 Robotics</span>
+            <span class="chip">👁️ Computer Vision</span>
+            <span class="chip">🧠 Embodied AI</span>
+          </div>
+          
+          <!-- CTA Buttons -->
+          <div class="hero-actions">
           <a class="btn" href="mailto:yjangir@andrew.cmu.edu">Contact</a>
-          <a class="btn" href="https://scholar.google.com/citations?user=ZzyKpUcAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+            <a class="btn" href="https://scholar.google.com/citations?user=ZzyKpUcAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
           <a class="btn" href="https://www.linkedin.com/in/yash-jangir-6a71651a1/" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn" href="https://github.com/offjangir" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://drive.google.com/drive/u/0/folders/1xK145RheaadMqRr7yFLdnjXH31uUD7Z3" target="_blank" rel="noopener">CV</a>
+          <a class="btn" href="./assets/img/jpg/Yash_Jangir_Resume.pdf" target="_blank" rel="noopener">CV</a>
           <a class="btn" href="./writing.html">Writing</a>
-          <button class="btn btn-theme" id="toggle-theme"><span id="theme-icon">☀️</span> Theme</button>
+          </div>
+        </div>
+        
+        <!-- RIGHT COLUMN: About Content -->
+        <div class="hero-right reveal reveal-delay-1">
+          <div class="about-content">
+            <p>I'm a 2nd-year M.S. Robotics student at <strong>Carnegie Mellon University</strong>, advised by <a href="https://www.cs.cmu.edu/~katef/" target="_blank" rel="noopener" class="link-underline">Prof. Katerina Fragkiadaki</a> and <a href="https://yonatanbisk.com/" target="_blank" rel="noopener" class="link-underline">Prof. Yonatan Bisk</a>. I am interested in how robots can learn to act intelligently in diverse, real-world settings. My current research focuses on <strong>evaluating generalist robot policies</strong>, <strong>vision–language–action (VLA) models</strong>, and <strong>real-to-sim alignment</strong>. I am also interested in how <strong>world dynamics</strong> and <strong>video-to-3D representations</strong> can help robots better understand and interact with their environments.</p>
+            
+            <p>Before grad school, I was a <a href="https://riss.ri.cmu.edu/" target="_blank" rel="noopener" class="link-underline">Robotics Institute Summer Scholar (RISS)</a> at CMU, where I worked with <a href="https://www.ri.cmu.edu/ri-faculty/sebastian-scherer/" target="_blank" rel="noopener" class="link-underline">Prof. Sebastian Scherer</a> and <a href="https://aerogjy.github.io/" target="_blank" rel="noopener" class="link-underline">Prof. Junyi Geng</a> on aerial manipulation and visual control. I also worked as a <strong>Robot Software Engineer</strong> at <a href="https://www.clutterbot.com/#About" target="_blank" rel="noopener" class="link-underline">Clutterbot Robotics</a>, developing efficient global relocalization methods for robots operating in unstructured environments with sparse maps. I completed my undergraduate studies at <strong>BITS Pilani, Goa</strong>.</p>
+            
+            <p>I am always open to new ideas, collaborations or discussions (whatever it may be). Feel free to reach out! You can find my contact info, CV, and projects here, or visit my <a href="https://github.com/offjangir" target="_blank" rel="noopener" class="link-underline">GitHub</a>.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scroll Cue -->
+      <div class="scroll-cue reveal reveal-delay-2">
+        <span>Scroll</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M19 12l-7 7-7-7"/>
+        </svg>
+      </div>
         </div>
       </section>
 
-
-      <section id="awards" class="fade-in delay-2">
-        <h2>Awards, Invited Talks and Service</h2>
-        <ul class="awards-list">
-          <li class="award-item">Invited Talk at <strong>1X Robotics</strong> on Scaling VLA Evaluation via Real-to-Sim</li>
-          <li class="award-item">Invited Talk at <strong>NVIDIA Robotics</strong> on RobotArena ∞: Unlimited Robot Benchmarking via Real-to-Sim Translation</li>
-          <li class="award-item">Selected as one of 50 students worldwide for the <strong>Robotics Institute Summer Scholars (RISS) Program</strong>, CMU</li>
-          <li class="award-item"><strong>Best Paper Award</strong>, IEEE IRIA 2021</li>
-          <li class="award-item"><strong>Best Paper Finalist</strong>, IEEE ICMA 2022</li>
-          <li class="award-item"><strong>Reviewer</strong>: Conference on Robot Learning (CoRL), IEEE Transactions on Pattern Analysis and Machine Intelligence</li>
-        </ul>
+  <!-- ============================================
+       AWARDS SECTION
+       ============================================ -->
+  <section class="section" id="awards">
+    <div class="container">
+      <h2 class="section-title reveal">Awards, Talks & Service</h2>
+      
+      <!-- Featured Talks (2 large cards) -->
+      <div class="awards-featured reveal reveal-delay-1">
+        <div class="award-card featured">
+          <div class="award-header">
+            <div class="award-icon">
+              <img src="./assets/img/jpg/logo/nvidia.png" alt="NVIDIA" />
+            </div>
+            <div>
+              <h3 class="award-title">Invited Talk at NVIDIA Robotics</h3>
+              <p class="award-org">NVIDIA</p>
+            </div>
+          </div>
+          <p class="award-desc">RobotArena ∞: Unlimited Robot Benchmarking via Real-to-Sim Translation</p>
+        </div>
+        
+        <div class="award-card featured">
+          <div class="award-header">
+            <div class="award-icon">
+              <img src="./assets/img/jpg/logo/1x.png" alt="1X Robotics" />
+            </div>
+            <div>
+              <h3 class="award-title">Invited Talk at 1X Robotics</h3>
+              <p class="award-org">1X Technologies</p>
+            </div>
+          </div>
+          <p class="award-desc">Scaling VLA Evaluation via Real-to-Sim</p>
+        </div>
+      </div>
+      
+      <!-- Medium Awards (3 cards) -->
+      <div class="awards-medium reveal reveal-delay-2">
+        <div class="award-card">
+          <div class="award-header">
+            <div class="award-icon">
+              <img src="./assets/img/jpg/logo/RISS-Logo.png" alt="RISS" />
+            </div>
+            <div>
+              <h3 class="award-title">RISS Scholar</h3>
+              <p class="award-org">Carnegie Mellon University</p>
+            </div>
+          </div>
+          <p class="award-desc">Selected as one of 50 students worldwide for the Robotics Institute Summer Scholars Program</p>
+        </div>
+        
+        <div class="award-card">
+          <div class="award-header">
+            <div class="award-icon">
+              <img src="./assets/img/jpg/logo/IEEE-Logo.jpg" alt="IEEE" />
+            </div>
+            <div>
+              <h3 class="award-title">Best Paper Award</h3>
+              <p class="award-org">IEEE IRIA 2021</p>
+            </div>
+          </div>
+          <p class="award-desc">International Symposium on Intelligent Robotics and Industrial Automation</p>
+        </div>
+        
+        <div class="award-card">
+          <div class="award-header">
+            <div class="award-icon">
+              <img src="./assets/img/jpg/logo/IEEE-Logo.jpg" alt="IEEE" />
+            </div>
+            <div>
+              <h3 class="award-title">Best Paper Finalist</h3>
+              <p class="award-org">IEEE ICMA 2022</p>
+            </div>
+          </div>
+          <p class="award-desc">International Conference on Mechatronics and Automation</p>
+        </div>
+      </div>
+      
+      <!-- Service (small cards) -->
+      <div class="awards-service reveal reveal-delay-3">
+        <div class="award-card small">
+          <h3 class="award-title">Reviewer</h3>
+          <p class="award-desc">Conference on Robot Learning (CoRL)</p>
+        </div>
+        <div class="award-card small">
+          <h3 class="award-title">Reviewer</h3>
+          <p class="award-desc">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</p>
+        </div>
+      </div>
+    </div>
       </section>
       
-
-      <section id="Selected publications">
-        <h2>Selected Publications</h2>
-        <ul class="pub-list" id="pub-list">
-          <li class="pub">
-            <img class="thumb" alt="RobotArena" src="./assets/img/jpg/robotarena.png" />
-            <div class="meta">
-              <div class="title">RobotArena ∞: Unlimited Robot Benchmarking via Real-to-Sim Translation</div>
-              <div class="authors"><strong>Yash Jangir</strong>, Yidi Zhang<sup>*</sup>, Kashu Yamazaki<sup>*</sup>, Chenyu Zhang<sup>*</sup>, Kuan-Hsun Tu, Tsung-Wei Ke, Lei Ke, Yonatan Bisk, Katerina Fragkiadaki</div>
-              <div class="venue">Preprint, 2026 [Under Review]</div>
-              <div class="links">
-                <a href="https://robotarenainf.github.io" target="_blank" rel="noopener"><strong>Project Page</strong></a> · 
-                <a href="https://arxiv.org/abs/2510.23571" target="_blank" rel="noopener"><strong>arXiv</strong></a>
+  <!-- ============================================
+       SELECTED PUBLICATIONS
+       ============================================ -->
+  <section class="section" id="research">
+    <div class="container">
+      <h2 class="section-title reveal">Selected Publications</h2>
+      
+      <div class="pub-grid">
+        <!-- Featured: RobotArena -->
+        <article class="pub-card featured reveal">
+          <div class="pub-media" data-media-type="image">
+            <img 
+              src="./assets/img/jpg/robotarena.png" 
+              alt="RobotArena project visualization"
+              loading="lazy"
+            />
+          </div>
+          <div class="pub-content">
+            <div class="pub-tags">
+              <span class="pub-tag">Preprint</span>
+              <span class="pub-tag">Under Review</span>
               </div>
+            <h3 class="pub-title">RobotArena ∞: Unlimited Robot Benchmarking via Real-to-Sim Translation</h3>
+            <p class="pub-authors"><strong>Yash Jangir</strong>, Yidi Zhang<sup>*</sup>, Kashu Yamazaki<sup>*</sup>, Chenyu Zhang<sup>*</sup>, Kuan-Hsun Tu, Tsung-Wei Ke, Lei Ke, Yonatan Bisk, Katerina Fragkiadaki</p>
+            <p class="pub-venue">Preprint, 2026 [Under Review]</p>
+            <div class="pub-links">
+              <a href="https://robotarenainf.github.io" target="_blank" rel="noopener" class="pub-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+                Project
+              </a>
+              <a href="https://arxiv.org/abs/2510.23571" target="_blank" rel="noopener" class="pub-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                arXiv
+              </a>
             </div>
-          </li>
-          <li class="pub">
-            <img class="thumb" alt="IROS 2023" src="./assets/img/jpg/servo_paper.png" />
-            <div class="meta">
-              <div class="title">Image-based visual servo control for aerial manipulation using a fully‑actuated UAV</div>
-              <div class="authors">Guanqi He<sup>*</sup>, <strong>Yash Jangir<sup>*</sup></strong>, Junyi Geng, Mohammadreza Mousaei, Dongwei Bai, Sebastian Scherer</div>
-              <div class="venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2023</div>
-              <div class="links">
-                <a href="https://ieeexplore.ieee.org/document/10342145" target="_blank" rel="noopener"><strong>Paper</strong></a>
+          </div>
+        </article>
+        
+        <!-- IROS 2023 -->
+        <article class="pub-card reveal">
+          <div class="pub-media" data-media-type="image">
+            <img 
+              src="./assets/img/jpg/servo_paper.png" 
+              alt="Visual servo control for aerial manipulation"
+              loading="lazy"
+            />
+          </div>
+          <div class="pub-content">
+            <div class="pub-tags">
+              <span class="pub-tag">IROS 2023</span>
               </div>
+            <h3 class="pub-title">Image-based visual servo control for aerial manipulation using a fully‑actuated UAV</h3>
+            <p class="pub-authors">Guanqi He<sup>*</sup>, <strong>Yash Jangir<sup>*</sup></strong>, Junyi Geng, Mohammadreza Mousaei, Dongwei Bai, Sebastian Scherer</p>
+            <p class="pub-venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2023</p>
+            <div class="pub-links">
+              <a href="https://ieeexplore.ieee.org/document/10342145" target="_blank" rel="noopener" class="pub-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                Paper
+              </a>
             </div>
-          </li>
-         </ul>
+          </div>
+        </article>
+      </div>
+    </div>
     </section>
 
-      <section id="projects" class="fade-in delay-2">
-        <h2>Selected Projects</h2>
-        <ul class="pub-list" id="project-list">
-          <li class="pub">
-            <img class="thumb" alt="ImagineAct" src="./assets/img/jpg/imagineAct.png" />
-            <div class="meta">
-              <div class="title">ImagineAct: Closed-Loop Vision-Language-Action with World Modeling</div>
-              <div class="authors"><strong>Yash Jangir<sup>*</sup></strong>, Karan Mirakhor<sup>*</sup>, Tanya Choudhary<sup>*</sup></div>
-              <div class="venue">Project (Sept 2025 - Present)</div>
-              <div class="links">
-                <a href="https://github.com/offjangir/ImagineAct" target="_blank" rel="noopener"><strong>GitHub</strong></a>
-              </div>
+  <!-- ============================================
+       SELECTED PROJECTS
+       ============================================ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title reveal">Selected Projects</h2>
+      
+      <div class="pub-grid">
+        <article class="pub-card reveal">
+          <div class="pub-media" data-media-type="image">
+            <img 
+              src="./assets/img/jpg/imagineAct.png" 
+              alt="ImagineAct project visualization"
+              loading="lazy"
+            />
+          </div>
+          <div class="pub-content">
+            <div class="pub-tags">
+              <span class="pub-tag">Project</span>
             </div>
-          </li>
-          <li class="pub">
-            <img class="thumb" alt="SpatialPi" src="./assets/img/jpg/imagineAct.png" />
-            <div class="meta">
-              <div class="title">SpatialPi: Forcing Spatial Priors in Vision-Language-Action Models</div>
-              <div class="authors">Yidi Zhang<sup>*</sup>, <strong>Yash Jangir<sup>*</sup></strong></div>
-              <div class="venue">Project (Sept 2025 - Present)</div>
-              <div class="links">
-                <a href="https://github.com/offjangir/SpatialPi" target="_blank" rel="noopener"><strong>GitHub</strong></a>
-              </div>
+            <h3 class="pub-title">ImagineAct: Closed-Loop Vision-Language-Action with World Modeling</h3>
+            <p class="pub-authors"><strong>Yash Jangir<sup>*</sup></strong>, Karan Mirakhor<sup>*</sup>, Tanya Choudhary<sup>*</sup></p>
+            <p class="pub-venue">Project (Sept 2025 - Present)</p>
+            <div class="pub-links">
+              <a href="https://github.com/offjangir/ImagineAct" target="_blank" rel="noopener" class="pub-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+                </svg>
+                GitHub
+              </a>
             </div>
-          </li>
-          <li class="pub">
-            <img class="thumb" alt="ReMov3r" src="./assets/img/jpg/remov3r.png" />
-            <div class="meta">
-              <div class="title">ReMov3r: Real-Time Monocular Video to 3D Reconstruction</div>
-              <div class="authors"><strong>Yash Jangir<sup>*</sup></strong>, Karan Mirakhor<sup>*</sup>, Tanya Choudhary<sup>*</sup></div>
-              <div class="venue">Project (Sept 2024 - Dec 2024)</div>
-              <div class="links">
-                <a href="https://github.com/offjangir/ReMov3R" target="_blank" rel="noopener"><strong>GitHub</strong></a> · 
-                <a href="./assets/img/jpg/L3D_Project_Proposal.pdf" target="_blank" rel="noopener"><strong>Report</strong></a>
-              </div>
+          </div>
+        </article>
+        
+        <article class="pub-card reveal">
+          <div class="pub-media pub-media-contain" data-media-type="image">
+            <img 
+              src="./assets/img/jpg/logo/spatial.png" 
+              alt="SpatialPi project visualization"
+              loading="lazy"
+            />
+          </div>
+          <div class="pub-content">
+            <div class="pub-tags">
+              <span class="pub-tag">Project</span>
             </div>
-          </li>
-          <li class="pub">
-            <img class="thumb" alt="3D Inpainting" src="./assets/img/jpg/3d_inpaint.png" />
-            <div class="meta">
-              <div class="title">3D Scene Inpainting with Text-to-Image Models and ControlNet</div>
-              <div class="authors"><strong>Yash Jangir</strong></div>
-              <div class="venue">Project (Oct 2025 - Nov 2025)</div>
-              <div class="links">
-                <a href="https://github.com/offjangir/Scene_Inpainting" target="_blank" rel="noopener"><strong>GitHub</strong></a>
-              </div>
+            <h3 class="pub-title">SpatialPi: Forcing Spatial Priors in Vision-Language-Action Models</h3>
+            <p class="pub-authors">Yidi Zhang<sup>*</sup>, <strong>Yash Jangir<sup>*</sup></strong></p>
+            <p class="pub-venue">Project (Sept 2025 - Present)</p>
+            <div class="pub-links">
+              <a href="https://github.com/offjangir/SpatialPi" target="_blank" rel="noopener" class="pub-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+                </svg>
+                GitHub
+              </a>
             </div>
-          </li>
-        </ul>
+          </div>
+        </article>
+        
+        <article class="pub-card reveal">
+          <div class="pub-media" data-media-type="image">
+            <img 
+              src="./assets/img/jpg/remov3r.png" 
+              alt="ReMov3r project visualization"
+              loading="lazy"
+            />
+          </div>
+          <div class="pub-content">
+            <div class="pub-tags">
+              <span class="pub-tag">Project</span>
+            </div>
+            <h3 class="pub-title">ReMov3r: Real-Time Monocular Video to 3D Reconstruction</h3>
+            <p class="pub-authors"><strong>Yash Jangir<sup>*</sup></strong>, Karan Mirakhor<sup>*</sup>, Tanya Choudhary<sup>*</sup></p>
+            <p class="pub-venue">Project (Sept 2024 - Dec 2024)</p>
+            <div class="pub-links">
+              <a href="https://github.com/offjangir/ReMov3R" target="_blank" rel="noopener" class="pub-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+                </svg>
+                GitHub
+              </a>
+              <a href="./assets/img/jpg/L3D_Project_Proposal.pdf" target="_blank" rel="noopener" class="pub-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                Report
+              </a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="pub-card reveal">
+          <div class="pub-media" data-media-type="image">
+            <img 
+              src="./assets/img/jpg/3d_inpaint.png" 
+              alt="3D Scene Inpainting visualization"
+              loading="lazy"
+            />
+          </div>
+          <div class="pub-content">
+            <div class="pub-tags">
+              <span class="pub-tag">Project</span>
+              </div>
+            <h3 class="pub-title">3D Scene Inpainting with Text-to-Image Models and ControlNet</h3>
+            <p class="pub-authors"><strong>Yash Jangir</strong></p>
+            <p class="pub-venue">Project (Oct 2025 - Nov 2025)</p>
+            <div class="pub-links">
+              <a href="https://github.com/offjangir/Scene_Inpainting" target="_blank" rel="noopener" class="pub-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+                </svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       OTHER PUBLICATIONS
+       ============================================ -->
+  <section class="section" id="other-publications">
+    <div class="container">
+      <h2 class="section-title reveal">Other Publications</h2>
+      
+      <div class="pub-grid">
+        <article class="pub-card reveal">
+          <div class="pub-media" data-media-type="image">
+            <img 
+              src="./assets/img/jpg/autoland.png" 
+              alt="Autonomous landing in MAVs"
+              loading="lazy"
+            />
+          </div>
+          <div class="pub-content">
+            <div class="pub-tags">
+              <span class="pub-tag">IRIA 2021</span>
+              <span class="pub-tag">Best Paper</span>
+              </div>
+            <h3 class="pub-title">A generalized Kalman filter augmented deep‑learning approach for autonomous landing in MAVs</h3>
+            <p class="pub-authors">Pranay Mathur, <strong>Yash Jangir</strong>, Neena Goveas</p>
+            <p class="pub-venue">Int. Symposium of Asian Control Association on Intelligent Robotics and Industrial Automation (IRIA), 2021 </p>
+            <div class="pub-links">
+              <a href="https://ieeexplore.ieee.org/document/9588758" target="_blank" rel="noopener" class="pub-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                Paper
+              </a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="pub-card reveal">
+          <div class="pub-media" data-media-type="image">
+            <img 
+              src="./assets/img/jpg/manipulation.png" 
+              alt="Force control on spherical manipulator"
+              loading="lazy"
+            />
+          </div>
+          <div class="pub-content">
+            <div class="pub-tags">
+              <span class="pub-tag">ICMA 2022</span>
+              <span class="pub-tag">Best Paper Finalist</span>
+              </div>
+            <h3 class="pub-title">Implementation and testing of force control on a spherical articulated manipulator</h3>
+            <p class="pub-authors">Prathamesh Saraf, <strong>Yash Jangir</strong>, R. N. Ponnalagu</p>
+            <p class="pub-venue">IEEE International Conference on Mechatronics and Automation (ICMA), 2022 </p>
+            <div class="pub-links">
+              <a href="https://ieeexplore.ieee.org/document/9856174" target="_blank" rel="noopener" class="pub-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                Paper
+              </a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="pub-card reveal">
+          <div class="pub-media" data-media-type="image">
+            <img 
+              src="./assets/img/jpg/purepusuit.png" 
+              alt="3D pure pursuit guidance"
+              loading="lazy"
+            />
+          </div>
+          <div class="pub-content">
+            <div class="pub-tags">
+              <span class="pub-tag">ASCC 2022</span>
+              </div>
+            <h3 class="pub-title">3D pure pursuit guidance of drones for autonomous precision landing</h3>
+            <p class="pub-authors">Kaushal Kishore, Sagar Dalai, <strong>Yash Jangir</strong>, Samarth Singh, M Rohan, D Shashank, Sree S S Katta, S K Saha</p>
+            <p class="pub-venue">13th Asian Control Conference (ASCC), 2022</p>
+            <div class="pub-links">
+              <a href="https://ieeexplore.ieee.org/document/9828198" target="_blank" rel="noopener" class="pub-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                Paper
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
       </section>
 
-      <section id="Other publications">
-        <h2>Other Publications</h2>
-        <ul class="pub-list" id="pub-list">
-          <li class="pub">
-            <img class="thumb" alt="IRIA 2021" src="./assets/img/jpg/autoland.png" />
-            <div class="meta">
-              <div class="title">A generalized Kalman filter augmented deep‑learning approach for autonomous landing in MAVs</div>
-              <div class="authors">Pranay Mathur, <strong>Yash Jangir</strong>, Neena Goveas</div>
-              <div class="venue">Int. Symposium of Asian Control Association on Intelligent Robotics and Industrial Automation (IRIA), 2021 — <strong>Best Paper Award</strong></div>
-              <div class="links">
-                <a href="https://ieeexplore.ieee.org/document/9588758" target="_blank" rel="noopener"><strong>Paper</strong></a>
-              </div>
+  <!-- ============================================
+       EDUCATION & EXPERIENCE TIMELINE
+       ============================================ -->
+  <section class="section" id="experience">
+    <div class="container">
+      <h2 class="section-title reveal">Education & Experience</h2>
+      
+      <div class="timeline">
+        <!-- CMU M.S. -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">
+            <span class="timeline-dot-inner"></span>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-logos">
+              <img class="timeline-logo" src="./assets/img/jpg/logo/Robotics_Institute_logo.svg" alt="Robotics Institute" />
             </div>
-          </li>
-          <li class="pub">
-            <img class="thumb" alt="ICMA 2022" src="./assets/img/jpg/manipulation.png" />
-            <div class="meta">
-              <div class="title">Implementation and testing of force control on a spherical articulated manipulator</div>
-              <div class="authors">Prathamesh Saraf, <strong>Yash Jangir</strong>, R. N. Ponnalagu</div>
-              <div class="venue">IEEE International Conference on Mechatronics and Automation (ICMA), 2022 — <strong>Finalist Best Paper Award</strong></div>
-              <div class="links">
-                <a href="https://ieeexplore.ieee.org/document/9856174" target="_blank" rel="noopener"><strong>Paper</strong></a>
+            <span class="timeline-date">2024 – Present</span>
+            <h3 class="timeline-title">M.S. Robotics</h3>
+            <p class="timeline-org">Carnegie Mellon University, Robotics Institute</p>
+            <p class="timeline-desc">Research with Prof. Katerina Fragkiadaki and Prof. Yonatan Bisk on generalist robot policies, VLA models, and real-to-sim alignment.</p>
+          </div>
+        </div>
+        
+        <!-- RISS -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">
+            <span class="timeline-dot-inner"></span>
               </div>
+          <div class="timeline-card">
+            <div class="timeline-logos">
+              <img class="timeline-logo" src="./assets/img/jpg/logo/RISS-Logo.png" alt="RISS" />
             </div>
-          </li>
-          <li class="pub">
-            <img class="thumb" alt="ASCC 2022" src="./assets/img/jpg/purepusuit.png" />
-            <div class="meta">
-              <div class="title">3D pure pursuit guidance of drones for autonomous precision landing</div>
-              <div class="authors">Kaushal Kishore, Sagar Dalai, <strong>Yash Jangir</strong>, Samarth Singh, M Rohan, D Shashank, Sree S S Katta, S K Saha</div>
-              <div class="venue">13th Asian Control Conference (ASCC), 2022</div>
-              <div class="links">
-                <a href="https://ieeexplore.ieee.org/document/9828198" target="_blank" rel="noopener"><strong>Paper</strong></a>
+            <span class="timeline-date">2022 – 2023</span>
+            <h3 class="timeline-title">Robotics Institute Summer Scholar (RISS)</h3>
+            <p class="timeline-org">Carnegie Mellon University</p>
+            <p class="timeline-desc">Worked with Prof. Sebastian Scherer and Prof. Junyi Geng on aerial manipulation and visual control systems.</p>
+          </div>
+        </div>
+        
+        <!-- Clutterbot -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">
+            <span class="timeline-dot-inner"></span>
               </div>
+          <div class="timeline-card">
+            <div class="timeline-logos">
+              <img class="timeline-logo" src="./assets/img/jpg/logo/clutterbot.png" alt="Clutterbot Robotics" />
             </div>
-          </li>
-         </ul>
+            <span class="timeline-date">2023 – 2024</span>
+            <h3 class="timeline-title">Robot Software Engineer</h3>
+            <p class="timeline-org">Clutterbot Robotics</p>
+            <p class="timeline-desc">Developed efficient global relocalization methods for robots operating in unstructured environments with sparse maps.</p>
+          </div>
+        </div>
+        
+        <!-- BITS Pilani -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">
+            <span class="timeline-dot-inner"></span>
+              </div>
+          <div class="timeline-card">
+            <div class="timeline-logos">
+              <img class="timeline-logo" src="./assets/img/jpg/BITS.png" alt="BITS Pilani" />
+            </div>
+            <span class="timeline-date">2019 – 2023</span>
+            <h3 class="timeline-title">B.E. Electronics and Instrumentation</h3>
+            <p class="timeline-org">BITS Pilani, Goa Campus</p>
+            <p class="timeline-desc">Undergraduate studies with focus on robotics, control systems, and computer vision.</p>
+          </div>
+        </div>
+      </div>
+    </div>
     </section>
 
- 
-
-      <footer>
-        © Yash Jangir, 2025
-      </footer>
+  <!-- ============================================
+       WRITING SECTION
+       ============================================ -->
+  <section class="section" id="writing">
+    <div class="container">
+      <h2 class="section-title reveal">Writing</h2>
+      
+      <div class="writing-grid reveal-stagger reveal">
+        <a href="./writing.html" class="writing-card">
+          <h3 class="writing-card-title">A Mind Under Training</h3>
+          <p class="writing-card-excerpt">Exploring ideas about intelligence, perception, and learning — both in humans and machines.</p>
+          <span class="writing-card-meta">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+            </svg>
+            Journal
+          </span>
+        </a>
+        
+        <a href="./writing.html#posts" class="writing-card">
+          <h3 class="writing-card-title">Posts Archive</h3>
+          <p class="writing-card-excerpt">Browse all posts on research, theory, and the connections between how minds work.</p>
+          <span class="writing-card-meta">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/>
+            </svg>
+            Archive
+          </span>
+        </a>
+        
+        <a href="./writing.html#faq" class="writing-card">
+          <h3 class="writing-card-title">About the Journal</h3>
+          <p class="writing-card-excerpt">Why this space exists and how to engage with the ideas shared here.</p>
+          <span class="writing-card-meta">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/>
+            </svg>
+            FAQ
+          </span>
+        </a>
       </div>
 
+      <div class="writing-cta reveal">
+        <a href="./writing.html" class="btn">View All Writing →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       QUOTE BAND
+       ============================================ -->
+  <div class="quote-band">
+    <div class="container">
+      <blockquote class="quote-text reveal">
+        "I'll show you that even someone without talent can succeed through effort."
+      </blockquote>
+      <cite class="quote-author reveal reveal-delay-1">— Rock Lee</cite>
+    </div>
+  </div>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="mailto:yjangir@andrew.cmu.edu" class="footer-link">Email</a>
+        <a href="https://github.com/offjangir" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+        <a href="https://www.linkedin.com/in/yash-jangir-6a71651a1/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=ZzyKpUcAAAAJ&hl=en" target="_blank" rel="noopener" class="footer-link">Scholar</a>
+      </div>
+      <p class="footer-text">© Yash Jangir, 2025</p>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       SCRIPTS
+       ============================================ -->
     <script>
-      // Typewriter intro animation
-      (function(){
-        var intro1 = document.getElementById('intro-1');
-        var nameSpan = intro1.querySelector('.intro-highlight');
-        var subtitle = document.querySelector('.subtitle');
-        var actions = document.querySelector('.actions');
-        
-        var nameText = "Yash Jangir";
-        var fullText = "Hi! I'm " + nameText;
-        
-        // Type "Hi! I'm Yash Jangir"
-        setTimeout(function(){
-          intro1.innerHTML = "Hi! I'm <span class='intro-highlight'>" + nameText + "</span>";
-          intro1.style.setProperty('--chars', fullText.length);
-          intro1.style.setProperty('--duration', '1.8s');
-          intro1.classList.add('typing');
-          
-          setTimeout(function(){
-            intro1.classList.remove('typing');
-            intro1.classList.add('done');
-            
-            // Show subtitle and actions
-            setTimeout(function(){
-              subtitle.style.opacity = '1';
-              subtitle.style.transition = 'opacity 1s ease';
-            }, 400);
-            setTimeout(function(){
-              actions.style.opacity = '1';
-              actions.style.transition = 'opacity 1s ease';
-            }, 800);
-          }, 1900);
-        }, 800);
-      })();
+    (function() {
+      'use strict';
       
-      // Theme toggle
-      (function(){
-        var themeBtn = document.getElementById('toggle-theme');
-        var themeIcon = document.getElementById('theme-icon');
-        var pref = localStorage.getItem('theme');
-        if (!pref && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          pref = 'dark';
+      // ========================================
+      // Navbar scroll behavior
+      // ========================================
+      const navbar = document.getElementById('navbar');
+      const navToggle = document.getElementById('nav-toggle');
+      const navLinks = document.getElementById('navbar-links');
+      
+      let lastScrollY = window.scrollY;
+      
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
         }
-        if (pref) document.documentElement.setAttribute('data-theme', pref);
-        
-        function setIcon(){ 
-          themeIcon.textContent = (document.documentElement.getAttribute('data-theme') === 'dark') ? '🌙' : '☀️';
-        }
-        setIcon();
-        
-        themeBtn.addEventListener('click', function(){
-          var curr = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-          document.documentElement.setAttribute('data-theme', curr);
-          localStorage.setItem('theme', curr);
-          setIcon();
+        lastScrollY = window.scrollY;
+      }, { passive: true });
+      
+      // Mobile nav toggle
+      navToggle.addEventListener('click', function() {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !expanded);
+        navLinks.classList.toggle('open');
+      });
+      
+      // Close mobile nav on link click
+      navLinks.querySelectorAll('.navbar-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          navLinks.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
         });
-      })();
+      });
       
-      // Reveal publications on scroll
-      (function(){
-        var pubs = Array.prototype.slice.call(document.querySelectorAll('.pub'));
-        if (!('IntersectionObserver' in window)) { pubs.forEach(function(p){ p.classList.add('visible'); }); return; }
-        var io = new IntersectionObserver(function(entries){
-          entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-        }, { threshold: 0.12 });
-        pubs.forEach(function(p){ io.observe(p); });
+      // ========================================
+      // Theme Toggle (Dark/Light Mode)
+      // ========================================
+      const themeToggle = document.getElementById('theme-toggle');
+      const htmlElement = document.documentElement;
+      
+      // Check for saved theme preference or default to dark
+      function getPreferredTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          return savedTheme;
+        }
+        // Default to dark theme
+        return 'dark';
+      }
+      
+      // Apply theme
+      function setTheme(theme) {
+        if (theme === 'light') {
+          htmlElement.setAttribute('data-theme', 'light');
+        } else {
+          htmlElement.removeAttribute('data-theme');
+        }
+        localStorage.setItem('theme', theme);
+      }
+      
+      // Initialize theme
+      setTheme(getPreferredTheme());
+      
+      // Toggle theme on button click
+      themeToggle.addEventListener('click', function() {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+      });
+      
+      // ========================================
+      // Smooth scroll with offset
+      // ========================================
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            const offset = 80;
+            const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // ========================================
+      // Scroll Reveal (IntersectionObserver)
+      // ========================================
+      function initReveal() {
+        const reveals = document.querySelectorAll('.reveal, .reveal-stagger');
+        
+        if (!('IntersectionObserver' in window)) {
+          reveals.forEach(function(el) {
+            el.classList.add('is-visible');
+          });
+          return;
+        }
+        
+        const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        });
+        
+        reveals.forEach(function(el) {
+          observer.observe(el);
+        });
+      }
+      
+      // ========================================
+      // Timeline dot animation
+      // ========================================
+      function initTimelineDots() {
+        const dots = document.querySelectorAll('.timeline-dot');
+        
+        if (!('IntersectionObserver' in window)) {
+          dots.forEach(function(dot) {
+            dot.classList.add('visible');
+          });
+          return;
+        }
+        
+        const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.5
+        });
+        
+        dots.forEach(function(dot) {
+          observer.observe(dot);
+        });
+      }
+      
+      // ========================================
+      // Media component: video hover play
+      // ========================================
+      function initMediaHover() {
+        const mediaContainers = document.querySelectorAll('.pub-media[data-media-type="video"]');
+        
+        mediaContainers.forEach(function(container) {
+          const video = container.querySelector('video');
+          if (!video) return;
+          
+          container.addEventListener('mouseenter', function() {
+            if (window.matchMedia('(hover: hover)').matches) {
+              video.play();
+            }
+          });
+          
+          container.addEventListener('mouseleave', function() {
+            video.pause();
+            video.currentTime = 0;
+          });
+        });
+      }
+      
+      // ========================================
+      // Subtle parallax on timeline (respects reduced motion)
+      // ========================================
+      function initParallax() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          return;
+        }
+        
+        const timelineCards = document.querySelectorAll('.timeline-card');
+        
+        function updateParallax() {
+          timelineCards.forEach(function(card) {
+            const rect = card.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            
+            if (rect.top < viewportHeight && rect.bottom > 0) {
+              const progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+              const translateY = (progress - 0.5) * 8; // Max 8px
+              card.style.transform = 'translateY(' + translateY + 'px)';
+            }
+          });
+          
+          requestAnimationFrame(updateParallax);
+        }
+        
+        requestAnimationFrame(updateParallax);
+      }
+      
+      // ========================================
+      // Active nav link on scroll
+      // ========================================
+      function initActiveNavLink() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinksAll = document.querySelectorAll('.navbar-link');
+        
+        const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute('id');
+              navLinksAll.forEach(function(link) {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + id) {
+                  link.classList.add('active');
+                }
+              });
+            }
+          });
+        }, {
+          threshold: 0.3,
+          rootMargin: '-80px 0px -50% 0px'
+        });
+        
+        sections.forEach(function(section) {
+          observer.observe(section);
+        });
+      }
+      
+      // ========================================
+      // Initialize all
+      // ========================================
+      document.addEventListener('DOMContentLoaded', function() {
+        initReveal();
+        initTimelineDots();
+        initMediaHover();
+        initParallax();
+        initActiveNavLink();
+      });
+      
       })();
     </script>
   </body>
