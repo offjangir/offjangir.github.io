@@ -335,7 +335,7 @@ strong {
 }
 
 .section {
-  padding: 3.5rem 0;
+  padding: 2.5rem 0;
   position: relative;
 }
 
@@ -348,10 +348,10 @@ strong {
 
 .section-title {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  margin: 0 0 1.5rem;
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  margin: 0 0 1.25rem;
   position: relative;
-  padding-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
 }
 
 .section-title::after {
@@ -837,14 +837,14 @@ strong {
 .pub-grid {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .pub-card {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 2.5rem;
-  padding: 2rem;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
+  padding: 1.25rem;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -949,24 +949,24 @@ strong {
 
 .pub-title {
   font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.5rem;
   color: var(--text);
   line-height: 1.4;
 }
 
 .pub-authors {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  margin-bottom: 0.4rem;
-  line-height: 1.6;
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
 }
 
 .pub-venue {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--muted);
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .pub-links {
@@ -1026,7 +1026,7 @@ strong {
 
 .timeline-item {
   position: relative;
-  padding-bottom: 3rem;
+  padding-bottom: 1.5rem;
 }
 
 .timeline-item:last-child {
@@ -1072,18 +1072,18 @@ strong {
 .timeline-logos {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-  padding: 0.6rem 0.8rem;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding: 0.4rem 0.6rem;
   background: rgba(255, 255, 255, 0.03);
   border-radius: var(--radius-sm);
   width: fit-content;
 }
 
 .timeline-logo {
-  height: 36px;
+  height: 28px;
   width: auto;
-  max-width: 140px;
+  max-width: 100px;
   object-fit: contain;
   opacity: 0.92;
   transition: all 0.3s var(--ease-out-expo);
@@ -1097,7 +1097,7 @@ strong {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.75rem;
+  padding: 1.25rem;
   transition: all 0.4s var(--ease-out-expo);
 }
 
@@ -1108,31 +1108,31 @@ strong {
 }
 
 .timeline-date {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--accent);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .timeline-title {
   font-family: var(--font-serif);
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.25rem;
   color: var(--text);
 }
 
 .timeline-org {
-  font-size: 1.05rem;
+  font-size: 0.9rem;
   color: var(--muted);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .timeline-desc {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
   margin: 0;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* Desktop alternating timeline */
@@ -1212,15 +1212,15 @@ strong {
 .awards-featured {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-  margin-bottom: 1.25rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .awards-medium {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin-bottom: 1.25rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .awards-service {
@@ -1233,7 +1233,7 @@ strong {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.75rem;
+  padding: 1.25rem;
   transition: all 0.4s var(--ease-out-expo);
 }
 
@@ -1363,8 +1363,8 @@ strong {
    ============================================ */
 .writing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
 }
 
 .writing-card {
@@ -1418,7 +1418,7 @@ strong {
    QUOTE BAND
    ============================================ */
 .quote-band {
-  padding: 4rem 0;
+  padding: 2.5rem 0;
   background: linear-gradient(135deg, var(--card) 0%, var(--bg2) 100%);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
