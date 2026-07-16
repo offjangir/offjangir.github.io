@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Yash Jangir</title>
-  <meta name="description" content="Yash Jangir — M.S. Robotics student at Carnegie Mellon University researching robot learning, VLA models, and real-to-sim alignment." />
+  <meta name="description" content="Yash Jangir — Research Intern on the Large Behavior Model team at Toyota Research Institute and incoming CS PhD student at Johns Hopkins University, researching robot learning, VLA models, and real-to-sim alignment." />
   <link rel="shortcut icon" href="./assets/img/jpg/logo/pageicon.png" />
   <link rel="icon" type="image/png" href="./assets/img/jpg/logo/pageicon.png" />
   
@@ -16,11 +16,11 @@
   <!-- Theme CSS -->
   <link rel="stylesheet" href="./assets/css/theme.css" />
   
-  <!-- Prevent flash of wrong theme -->
+  <!-- Prevent flash of wrong theme (default: light) -->
   <script>
     (function() {
-      var theme = localStorage.getItem('theme');
-      if (theme === 'light') {
+      var theme = localStorage.getItem('theme-v2');
+      if (theme !== 'dark') {
         document.documentElement.setAttribute('data-theme', 'light');
       }
     })();
@@ -89,7 +89,7 @@
         </div>
           
           <h1 class="hero-name">Yash Jangir</h1>
-          <p class="hero-subtitle">M.S. Robotics • Carnegie Mellon University</p>
+          <p class="hero-subtitle">Research Intern, Toyota Research Institute · Incoming CS PhD, Johns Hopkins</p>
           
           <!-- Interest Chips -->
           <div class="hero-chips">
@@ -112,9 +112,9 @@
         <!-- RIGHT COLUMN: About Content -->
         <div class="hero-right reveal reveal-delay-1">
           <div class="about-content">
-            <p>I'm a 2nd-year M.S. Robotics student at <strong>Carnegie Mellon University</strong>, advised by <a href="https://www.cs.cmu.edu/~katef/" target="_blank" rel="noopener" class="link-underline">Prof. Katerina Fragkiadaki</a> and <a href="https://yonatanbisk.com/" target="_blank" rel="noopener" class="link-underline">Prof. Yonatan Bisk</a>. I am interested in how robots can learn to act intelligently in diverse, real-world settings. My current research focuses on <strong>evaluating generalist robot policies</strong>, <strong>vision–language–action (VLA) models</strong>, and <strong>real-to-sim alignment</strong>. I am also interested in how <strong>world dynamics</strong> and <strong>video-to-3D representations</strong> can help robots better understand and interact with their environments.</p>
-            
-            <p>Before grad school, I was a <a href="https://riss.ri.cmu.edu/" target="_blank" rel="noopener" class="link-underline">Robotics Institute Summer Scholar (RISS)</a> at CMU, where I worked with <a href="https://www.ri.cmu.edu/ri-faculty/sebastian-scherer/" target="_blank" rel="noopener" class="link-underline">Prof. Sebastian Scherer</a> and <a href="https://aerogjy.github.io/" target="_blank" rel="noopener" class="link-underline">Prof. Junyi Geng</a> on aerial manipulation and visual control. I also worked as a <strong>Robot Software Engineer</strong> at <a href="https://www.clutterbot.com/#About" target="_blank" rel="noopener" class="link-underline">Clutterbot Robotics</a>, developing efficient global relocalization methods for robots operating in unstructured environments with sparse maps. I completed my undergraduate studies at <strong>BITS Pilani, Goa</strong>.</p>
+            <p>I'm currently a <strong>Research Intern</strong> at the <a href="https://www.tri.global/" target="_blank" rel="noopener" class="link-underline">Toyota Research Institute</a>, working on the <strong>Large Behavior Model</strong> team. In Fall 2026, I'll join <strong>Johns Hopkins University</strong> as a <strong>CS PhD student</strong>, advised by <a href="https://homangab.github.io/" target="_blank" rel="noopener" class="link-underline">Prof. Homanga Bharadhwaj</a>. I am broadly interested in how robots can learn to act intelligently in diverse, real-world settings.</p>
+
+            <p>Previously, I completed my <strong>M.S. in Robotics</strong> at <strong>Carnegie Mellon University</strong>, advised by <a href="https://www.cs.cmu.edu/~katef/" target="_blank" rel="noopener" class="link-underline">Prof. Katerina Fragkiadaki</a> and <a href="https://yonatanbisk.com/" target="_blank" rel="noopener" class="link-underline">Prof. Yonatan Bisk</a>, where I worked on evaluating generalist robot policies and real-to-sim alignment. Before that, I was a <a href="https://riss.ri.cmu.edu/" target="_blank" rel="noopener" class="link-underline">Robotics Institute Summer Scholar (RISS)</a> at CMU, working with <a href="https://www.ri.cmu.edu/ri-faculty/sebastian-scherer/" target="_blank" rel="noopener" class="link-underline">Prof. Sebastian Scherer</a> and <a href="https://aerogjy.github.io/" target="_blank" rel="noopener" class="link-underline">Prof. Junyi Geng</a> on aerial manipulation and visual control. I also worked as a <strong>Robot Software Engineer</strong> at <a href="https://www.clutterbot.com/#About" target="_blank" rel="noopener" class="link-underline">Clutterbot Robotics</a>, developing efficient global relocalization methods for robots operating in unstructured environments with sparse maps. I completed my undergraduate studies at <strong>BITS Pilani, Goa</strong>.</p>
             
             <p>I am always open to new ideas, collaborations or discussions (whatever it may be). Feel free to reach out! You can find my contact info, CV, and projects here, or visit my <a href="https://github.com/offjangir" target="_blank" rel="noopener" class="link-underline">GitHub</a>.</p>
           </div>
@@ -555,6 +555,38 @@
       <h2 class="section-title reveal">Education & Experience</h2>
       
       <div class="timeline">
+        <!-- JHU PhD (Incoming) -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">
+            <span class="timeline-dot-inner"></span>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-logos">
+              <img class="timeline-logo" src="./assets/img/jpg/logo/jhu.png" alt="Johns Hopkins University" />
+            </div>
+            <span class="timeline-date">Incoming — Fall 2026</span>
+            <h3 class="timeline-title">Ph.D. in Computer Science</h3>
+            <p class="timeline-org">Johns Hopkins University</p>
+            <p class="timeline-desc">Incoming CS PhD student, advised by Prof. Homanga Bharadhwaj, working on robot learning, generalist policies, and embodied AI.</p>
+          </div>
+        </div>
+
+        <!-- Toyota Research Institute -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">
+            <span class="timeline-dot-inner"></span>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-logos">
+              <img class="timeline-logo" src="./assets/img/jpg/logo/tri.png" alt="Toyota Research Institute" />
+            </div>
+            <span class="timeline-date">May, 2026 – Present</span>
+            <h3 class="timeline-title">Research Intern</h3>
+            <p class="timeline-org">Toyota Research Institute — Large Behavior Model Team</p>
+            <p class="timeline-desc">Research on large behavior models for generalist robot manipulation.</p>
+          </div>
+        </div>
+
         <!-- CMU M.S. -->
         <div class="timeline-item reveal">
           <div class="timeline-dot">
@@ -564,13 +596,13 @@
             <div class="timeline-logos">
               <img class="timeline-logo" src="./assets/img/jpg/logo/Robotics_Institute_logo.svg" alt="Robotics Institute" />
             </div>
-            <span class="timeline-date">Aug, 2024 – Present</span>
+            <span class="timeline-date">Aug, 2024 – May, 2026</span>
             <h3 class="timeline-title">M.S. Robotics</h3>
             <p class="timeline-org">Carnegie Mellon University, Robotics Institute</p>
-            <p class="timeline-desc">Research with Prof. Katerina Fragkiadaki and Prof. Yonatan Bisk on generalist robot policies, VLA models, and real-to-sim alignment.</p>
+            <p class="timeline-desc">Worked with Prof. Katerina Fragkiadaki and Prof. Yonatan Bisk on generalist robot policies, VLA models, and real-to-sim alignment.</p>
           </div>
         </div>
-        
+
         <!-- Clutterbot -->
         <div class="timeline-item reveal">
           <div class="timeline-dot">
@@ -694,7 +726,7 @@
         <a href="https://www.linkedin.com/in/yash-jangir-6a71651a1/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
         <a href="https://scholar.google.com/citations?user=ZzyKpUcAAAAJ&hl=en" target="_blank" rel="noopener" class="footer-link">Scholar</a>
       </div>
-      <p class="footer-text">© Yash Jangir, 2025</p>
+      <p class="footer-text">© Yash Jangir, 2026</p>
     </div>
   </footer>
 
@@ -744,28 +776,33 @@
       const themeToggle = document.getElementById('theme-toggle');
       const htmlElement = document.documentElement;
       
-      // Check for saved theme preference or default to dark
+      // Check for saved theme preference or default to light
       function getPreferredTheme() {
-        const savedTheme = localStorage.getItem('theme');
+        const savedTheme = localStorage.getItem('theme-v2');
         if (savedTheme) {
           return savedTheme;
         }
-        // Default to dark theme
-        return 'dark';
+        // Default to light theme
+        return 'light';
       }
-      
-      // Apply theme
-      function setTheme(theme) {
+
+      // Apply theme to the page
+      function applyTheme(theme) {
         if (theme === 'light') {
           htmlElement.setAttribute('data-theme', 'light');
         } else {
           htmlElement.removeAttribute('data-theme');
         }
-        localStorage.setItem('theme', theme);
       }
-      
-      // Initialize theme
-      setTheme(getPreferredTheme());
+
+      // Apply and persist (used on explicit toggle only)
+      function setTheme(theme) {
+        applyTheme(theme);
+        localStorage.setItem('theme-v2', theme);
+      }
+
+      // Initialize theme (apply only — don't persist a default the user didn't choose)
+      applyTheme(getPreferredTheme());
       
       // Toggle theme on button click
       themeToggle.addEventListener('click', function() {
