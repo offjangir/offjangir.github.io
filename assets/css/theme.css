@@ -1667,3 +1667,17 @@ strong {
   border-color: rgba(0, 0, 0, 0.12);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
+
+/* Visitor map */
+.visitor-map {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.visitor-map img,
+.visitor-map canvas {
+  max-width: 100%;
+  height: auto;
+}
